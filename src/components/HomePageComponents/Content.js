@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import React from 'react';
 import { theme } from '../../theme';
-import PostComponent from './PostComponent';
+import PostComponent from './ContentPostComponent';
 
 const Content = () => {
     const ListOfPosts = [
@@ -20,7 +20,7 @@ const Content = () => {
             userInfo: {
                 name: 'Jason Wardrop',
                 userName: '@jeson102',
-                avatar: 'images/jason_avatar.png',
+                avatar: 'images/avatar2.png',
             },
             id: 2,
             text: ' How to get the best CPC in google ads!',

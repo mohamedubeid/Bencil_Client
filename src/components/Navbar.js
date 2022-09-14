@@ -19,7 +19,7 @@ import {
     Logo,
     LogoImage,
     BadgeStyle,
-} from '../styledComponents/Navbar';
+} from '../styledComponents/NavbarStyledComp.js';
 
 const Navbar = () => {
     const loggedIn = true;

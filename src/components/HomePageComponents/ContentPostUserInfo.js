@@ -1,20 +1,8 @@
 import React from 'react';
-import { Avatar, Stack, Typography, styled, Button } from '@mui/material';
+import { Avatar, Stack, Button } from '@mui/material';
 import { theme } from '../../theme';
 import DoneIcon from '@mui/icons-material/Done';
-
-const Name = styled(Typography)(({ theme }) => ({
-    fontWeight: '600',
-    fontSize: '15px',
-    lineHeight: '18.29px',
-}));
-
-const UserName = styled(Typography)(({ theme }) => ({
-    fontWeight: '400',
-    fontSize: '15px',
-    lineHeight: '18.29px',
-    borderRadius: '5px',
-}));
+import { Name, UserName } from '../../styledComponents/ContentStyledComp';
 
 const PostUserInfo = (props) => {
     return (

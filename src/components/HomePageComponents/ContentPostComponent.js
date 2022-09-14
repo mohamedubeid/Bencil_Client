@@ -1,35 +1,17 @@
-import {
-    Box,
-    Typography,
-    Stack,
-    styled,
-    IconButton,
-    Divider,
-} from '@mui/material';
+import { Box, Typography, Stack, Divider } from '@mui/material';
 import React, { useState } from 'react';
 import { theme } from '../../theme';
-import PostUserInfo from './PostUserInfo';
-import FlashOnIcon from '@mui/icons-material/FlashOn';
+import PostUserInfo from './ContentPostUserInfo';
 import TextsmsIcon from '@mui/icons-material/Textsms';
 import { TbBulb } from 'react-icons/tb';
 import { FaShare } from 'react-icons/fa';
 import { IoAddCircleSharp } from 'react-icons/io5';
-const PostFont = {
-    fontSize: '13px',
-    lineHeight: '16.51px',
-    color: '#000000',
-};
-
-const Image = styled('img')(({ theme }) => ({
-    width: '285px',
-    height: '507px',
-    borderRadius: '10px',
-}));
-
-const ReactionsButton = styled(IconButton)(({ theme }) => ({
-    padding: 0,
-    margin: 0,
-}));
+import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
+import {
+    PostFont,
+    Image,
+    ReactionsButton,
+} from '../../styledComponents/ContentStyledComp';
 
 const PostComponent = (props) => {
     const [isInsightFull, setInsightFull] = useState(false);
@@ -65,21 +47,24 @@ const PostComponent = (props) => {
                     >
                         {text}
                     </Typography>
-                    <Typography
-                        sx={{
-                            ...PostFont,
-                            fontWeight: '400',
-                        }}
-                    >
-                        <FlashOnIcon
+                    <Stack direction="row" spacing="3px">
+                        <ElectricBoltIcon
                             sx={{
                                 color: '#dddd00',
-                                marginRight: '2px',
+                                // marginRight: '2px',
                                 fontSize: '15px',
                             }}
                         />
-                        {topic}
-                    </Typography>
+                        <Typography
+                            variant="h6"
+                            sx={{
+                                ...PostFont,
+                                fontWeight: '400',
+                            }}
+                        >
+                            {topic}
+                        </Typography>
+                    </Stack>
                 </Box>
                 <Box position="relative">
                     <Image src={image} />
