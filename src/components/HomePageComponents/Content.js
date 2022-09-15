@@ -14,18 +14,18 @@ const Content = () => {
             id: 1,
             text: ' is traditional marketing still effective in 2022?',
             topic: 'Marketing Channels',
-            image: 'images/test_v1.png',
+            image: 'images/assets/test_v1.png',
         },
         {
             userInfo: {
                 name: 'Jason Wardrop',
                 userName: '@jeson102',
-                avatar: 'images/avatar2.png',
+                avatar: 'images/assets/avatar2.png',
             },
             id: 2,
             text: ' How to get the best CPC in google ads!',
             topic: 'Google Ads',
-            image: 'images/test_v2.png',
+            image: 'images/assets/test_v2.png',
         },
     ];
     return (

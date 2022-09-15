@@ -1,30 +1,30 @@
 import React from 'react';
 import { Box, Typography, Stack } from '@mui/material';
-import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
+import { TopicButton } from '../../styledComponents/SidebarStyledComp';
 
-const TrendingTopics = () => {
+const TrendingTopics = (props) => {
+    const { topic, icon } = props;
     return (
-        <Box sx={{ display: 'inline-block' }}>
-            <Stack
-                direction="row"
-                spacing="3px"
-                textAlign="center"
-                sx={{
-                    borderRadius: '14.2253px',
-                    background: '#D9D9D9',
-                    p: '5px 8px 5px 5px',
-                }}
-            >
-                <ElectricBoltIcon
+        <Box sx={{ display: 'inline-block', m: '7px 5px' }}>
+            <TopicButton sx={{ borderRadius: '14.2253px' }}>
+                <Stack
+                    direction="row"
+                    spacing="3px"
+                    textAlign="center"
                     sx={{
-                        color: '#dddd00',
-                        fontSize: '15px',
+                        background: '#D9D9D9',
+                        p: '1px 10px 1px 7px',
+                        borderRadius: '14.2253px',
                     }}
-                />
-                <Typography sx={{ fontSize: '12px' }}>
-                    Marketing Channels
-                </Typography>
-            </Stack>
+                >
+                    {icon}
+                    <Typography
+                        sx={{ fontSize: '12px', lineHeight: '25.15px' }}
+                    >
+                        {topic}
+                    </Typography>
+                </Stack>
+            </TopicButton>
         </Box>
     );
 };

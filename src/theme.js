@@ -8,6 +8,7 @@ export const theme = createTheme({
         type: 'light',
         primary: {
             main: '#0A66C2',
+            light: '#0A66C2dd',
         },
         secondary: {
             main: '#D9D9D9',

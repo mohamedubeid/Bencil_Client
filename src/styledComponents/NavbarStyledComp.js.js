@@ -3,6 +3,8 @@ import { styled, Toolbar, Box, Button, Avatar } from '@mui/material';
 export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'space-between',
+    marginTop: '5px',
+    marginBottom: '5px',
 }));
 
 export const Search = styled('div')(({ theme }) => ({

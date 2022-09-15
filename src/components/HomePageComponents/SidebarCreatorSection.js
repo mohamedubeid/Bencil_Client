@@ -1,7 +1,10 @@
-import { Box, Stack, Button } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import React from 'react';
 import CreatorInfo from './SidebarCreatorInfo';
-import { SideBarTitle } from '../../styledComponents/SidebarStyledComp';
+import {
+    SideBarTitle,
+    SeeAllButton,
+} from '../../styledComponents/SidebarStyledComp';
 
 const CreatorSection = (props) => {
     const { creatorsList } = props;
@@ -15,17 +18,9 @@ const CreatorSection = (props) => {
                     );
                 })}
             </Stack>
-            <Button
-                variant="text"
-                sx={{
-                    textTransform: 'none',
-                    mt: '22.5px',
-                    '&:hover': { backgroundColor: 'transparent' },
-                }}
-                onClick={() => console.log('see all')}
-            >
+            <SeeAllButton variant="text" onClick={() => console.log('see all')}>
                 See All
-            </Button>
+            </SeeAllButton>
         </Box>
     );
 };

@@ -1,12 +1,6 @@
 import { Box, Typography, Stack, Divider } from '@mui/material';
-import React, { useState } from 'react';
-import { theme } from '../../theme';
+import React from 'react';
 import PostUserInfo from './ContentPostUserInfo';
-import TextsmsIcon from '@mui/icons-material/Textsms';
-import { TbBulb } from 'react-icons/tb';
-import { FaShare } from 'react-icons/fa';
-import { IoAddCircleSharp } from 'react-icons/io5';
-import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import {
     PostFont,
     Image,
@@ -14,7 +8,6 @@ import {
 } from '../../styledComponents/ContentStyledComp';
 
 const PostComponent = (props) => {
-    const [isInsightFull, setInsightFull] = useState(false);
     const { userInfo, text, topic, image } = props.postData;
 
     return (
@@ -48,13 +41,7 @@ const PostComponent = (props) => {
                         {text}
                     </Typography>
                     <Stack direction="row" spacing="3px">
-                        <ElectricBoltIcon
-                            sx={{
-                                color: '#dddd00',
-                                // marginRight: '2px',
-                                fontSize: '15px',
-                            }}
-                        />
+                        <img src="images/trend.png" alt="tend" />
                         <Typography
                             variant="h6"
                             sx={{
@@ -71,43 +58,25 @@ const PostComponent = (props) => {
                     <Stack
                         position="absolute"
                         direction="column"
-                        sx={{ right: '0px', top: '50%' }}
+                        sx={{
+                            right: '0px',
+                            top: '50%',
+                        }}
                         spacing="30px"
                     >
                         <ReactionsButton
-                            sx={{
-                                fontSize: '45px',
-                                color: isInsightFull
-                                    ? theme.palette.secondary.dark
-                                    : theme.palette.primary.light,
-                            }}
-                            onClick={() => setInsightFull(!isInsightFull)}
+                            onClick={() => console.log('insightful')}
                         >
-                            <TbBulb />
+                            <img src="images/insightful.png" alt="insightful" />
                         </ReactionsButton>
-                        <ReactionsButton>
-                            <TextsmsIcon
-                                sx={{
-                                    fontSize: '30px',
-                                    color: theme.palette.secondary.dark,
-                                }}
-                            />
+                        <ReactionsButton onClick={() => console.log('comment')}>
+                            <img src="images/comment.png" alt="comment" />
                         </ReactionsButton>
-                        <ReactionsButton
-                            sx={{
-                                fontSize: '30px',
-                                color: theme.palette.secondary.dark,
-                            }}
-                        >
-                            <FaShare />
+                        <ReactionsButton onClick={() => console.log('share')}>
+                            <img src="images/share.png" alt="share" />
                         </ReactionsButton>
-                        <ReactionsButton
-                            sx={{
-                                fontSize: '35px',
-                                color: theme.palette.secondary.dark,
-                            }}
-                        >
-                            <IoAddCircleSharp />
+                        <ReactionsButton onClick={() => console.log('save')}>
+                            <img src="images/save.png" alt="save" />
                         </ReactionsButton>
                     </Stack>
                 </Box>
