@@ -24,9 +24,17 @@ import {
 const Navbar = () => {
     const loggedIn = true;
     return (
-        <AppBar position="sticky" color="background">
+        <AppBar
+            sx={{ position: { xs: 'static', md: 'sticky' } }}
+            color="background"
+        >
             <StyledToolbar disableGutters>
-                <Logo src="images/logo.png" alt="logo" />
+                <Logo
+                    src="images/logo.png"
+                    alt="logo"
+                    width="182px"
+                    height="36px"
+                />
                 <LogoImage src="images/logo_image.png" alt="logo_image" />
                 <Search>
                     <InputBase
@@ -65,8 +73,18 @@ const Navbar = () => {
                                 console.log('this is messages icon button')
                             }
                         >
-                            <Badge badgeContent={4} color="primary">
-                                <TelegramIcon color="action" sx={BadgeStyle} />
+                            <Badge
+                                badgeContent={4}
+                                color="primary"
+                                sx={{ marginTop: '5px' }}
+                            >
+                                <TelegramIcon
+                                    color="action"
+                                    sx={{
+                                        width: '28px',
+                                        height: '28px',
+                                    }}
+                                />
                             </Badge>
                         </IconButton>
                         <UserAvatar

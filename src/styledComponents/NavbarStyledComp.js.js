@@ -56,16 +56,17 @@ export const Logo = styled('img')(({ theme }) => ({
     display: 'inline',
     width: '182px',
     height: '40px',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
         display: 'none',
     },
 }));
 
 export const LogoImage = styled('img')(({ theme }) => ({
     display: 'inline',
-    width: '82',
-    height: '35px',
-    [theme.breakpoints.up('sm')]: {
+    width: '50px',
+    height: '45px',
+    marginLeft: '15px',
+    [theme.breakpoints.up('md')]: {
         display: 'none',
     },
 }));

@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import { theme } from '../../theme';
 import PostComponent from './ContentPostComponent';
 
 const Content = () => {

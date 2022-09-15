@@ -20,25 +20,25 @@ const Sidebar = () => {
             id: 1,
             name: 'Mohamed Ubeid',
             userName: '@mubeid1999',
-            avatar: '/images/assets/avatar1.png',
+            avatar: 'images/assets/avatar1.png',
         },
         {
             id: 2,
             name: 'Mohamed Ubeid2',
             userName: '@mubeid19992',
-            avatar: '/images/assets/avatar3.png',
+            avatar: 'images/assets/avatar2.png',
         },
         {
             id: 3,
             name: 'Mohamed Ubeid',
             userName: '@mubeid1999',
-            avatar: '/images/assets/avatar1.png',
+            avatar: 'images/assets/avatar3.png',
         },
         {
             id: 4,
             name: 'Mohamed Ubeid2',
             userName: '@mubeid19992',
-            avatar: '/images/assets/avatar3.png',
+            avatar: 'images/assets/avatar1.png',
         },
     ];
     return (
