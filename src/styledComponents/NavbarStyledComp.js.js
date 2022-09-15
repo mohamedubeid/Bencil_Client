@@ -63,8 +63,8 @@ export const Logo = styled('img')(({ theme }) => ({
 
 export const LogoImage = styled('img')(({ theme }) => ({
     display: 'inline',
-    width: '50px',
-    height: '45px',
+    width: '43px',
+    height: '42px',
     marginLeft: '15px',
     [theme.breakpoints.up('md')]: {
         display: 'none',
