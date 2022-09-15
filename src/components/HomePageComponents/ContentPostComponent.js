@@ -42,7 +42,12 @@ const PostComponent = (props) => {
                         {text}
                     </Typography>
                     <Stack direction="row" spacing="3px">
-                        <img src="images/trend.png" alt="tend" />
+                        <img
+                            src="images/light.svg"
+                            alt="tend"
+                            width="8.97px"
+                            height="15.78px"
+                        />
                         <Typography
                             variant="h6"
                             sx={{

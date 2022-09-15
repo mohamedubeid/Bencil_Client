@@ -33,7 +33,7 @@ export const SeeAllButton = styled(Button)(({ theme }) => ({
 
 export const TopicIcon = styled('img')(({ theme }) => ({
     width: '8.23px',
-    height: '14.23px',
+    height: '14.48px',
     marginTop: '5px',
 }));
 
