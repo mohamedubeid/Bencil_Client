@@ -70,7 +70,7 @@ const PostComponent = (props) => {
                         >
                             {isInsightful ? (
                                 <img
-                                    src="images/insightfuled.png"
+                                    src="images/insightfuled.svg"
                                     alt="insightful"
                                     width="29px"
                                     height="40px"
@@ -93,7 +93,7 @@ const PostComponent = (props) => {
                         <ReactionsButton onClick={() => setSaved(!isSaved)}>
                             {isSaved ? (
                                 <img
-                                    src="images/saved.png"
+                                    src="images/saved.svg"
                                     alt="save"
                                     width="29px"
                                     height="40px"
