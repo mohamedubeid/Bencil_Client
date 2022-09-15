@@ -29,11 +29,7 @@ const Content = () => {
         },
     ];
     return (
-        <Box
-            flex={2.1}
-            pt={'45px'}
-            sx={{ backgroundColor: theme.palette.background.light }}
-        >
+        <Box flex={2.1} pt={'45px'}>
             {ListOfPosts.map((post) => {
                 return <PostComponent postData={post} key={post.id} />;
             })}
