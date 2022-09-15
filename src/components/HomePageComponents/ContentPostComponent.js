@@ -1,5 +1,5 @@
 import { Box, Typography, Stack, Divider } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import PostUserInfo from './ContentPostUserInfo';
 import {
     PostFont,
@@ -9,13 +9,14 @@ import {
 
 const PostComponent = (props) => {
     const { userInfo, text, topic, image } = props.postData;
-
+    const [isInsightful, setInsightful] = useState(false);
+    const [isSaved, setSaved] = useState(false);
     return (
         <Box
             sx={{
                 display: 'block',
                 maxWidth: '402px',
-                margin: { xs: 'auto', md: '0 30% 0 15%' },
+                margin: { xs: 'auto', lg: '0 30% 0 15%' },
             }}
         >
             <PostUserInfo
@@ -65,18 +66,46 @@ const PostComponent = (props) => {
                         spacing="30px"
                     >
                         <ReactionsButton
-                            onClick={() => console.log('insightful')}
+                            onClick={() => setInsightful(!isInsightful)}
                         >
-                            <img src="images/insightful.png" alt="insightful" />
+                            {isInsightful ? (
+                                <img
+                                    src="images/insightfuled.png"
+                                    alt="insightful"
+                                    width="29px"
+                                    height="40px"
+                                />
+                            ) : (
+                                <img
+                                    src="images/insightful.svg"
+                                    alt="insightful"
+                                    width="29px"
+                                    height="40px"
+                                />
+                            )}
                         </ReactionsButton>
                         <ReactionsButton onClick={() => console.log('comment')}>
-                            <img src="images/comment.png" alt="comment" />
+                            <img src="images/comment.svg" alt="comment" />
                         </ReactionsButton>
                         <ReactionsButton onClick={() => console.log('share')}>
-                            <img src="images/share.png" alt="share" />
+                            <img src="images/share.svg" alt="share" />
                         </ReactionsButton>
-                        <ReactionsButton onClick={() => console.log('save')}>
-                            <img src="images/save.png" alt="save" />
+                        <ReactionsButton onClick={() => setSaved(!isSaved)}>
+                            {isSaved ? (
+                                <img
+                                    src="images/saved.png"
+                                    alt="save"
+                                    width="29px"
+                                    height="40px"
+                                />
+                            ) : (
+                                <img
+                                    src="images/save.svg"
+                                    alt="save"
+                                    width="29px"
+                                    height="40px"
+                                />
+                            )}
                         </ReactionsButton>
                     </Stack>
                 </Box>

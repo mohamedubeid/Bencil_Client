@@ -25,7 +25,9 @@ const Navbar = () => {
     const loggedIn = true;
     return (
         <AppBar
-            sx={{ position: { xs: 'static', md: 'sticky' } }}
+            sx={{
+                position: { xs: 'static', md: 'sticky' },
+            }}
             color="background"
         >
             <StyledToolbar disableGutters>
