@@ -82,18 +82,18 @@ const PostComponent = (props) => {
                                 />
                             ) : (
                                 <img
-                                    src="images/insightful.svg"
+                                    src="images/insightful2.svg"
                                     alt="insightful"
-                                    width="29px"
-                                    height="40px"
+                                    // width="29px"
+                                    // height="40px"
                                 />
                             )}
                         </ReactionsButton>
                         <ReactionsButton onClick={() => console.log('comment')}>
-                            <img src="images/comment.svg" alt="comment" />
+                            <img src="images/comment2.svg" alt="comment" />
                         </ReactionsButton>
                         <ReactionsButton onClick={() => console.log('share')}>
-                            <img src="images/share.svg" alt="share" />
+                            <img src="images/share2.svg" alt="share" />
                         </ReactionsButton>
                         <ReactionsButton onClick={() => setSaved(!isSaved)}>
                             {isSaved ? (
@@ -105,10 +105,10 @@ const PostComponent = (props) => {
                                 />
                             ) : (
                                 <img
-                                    src="images/save.svg"
+                                    src="images/save2.svg"
                                     alt="save"
-                                    width="29px"
-                                    height="40px"
+                                    // width="29px"
+                                    // height="40px"
                                 />
                             )}
                         </ReactionsButton>
