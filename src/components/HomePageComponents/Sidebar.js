@@ -1,17 +1,12 @@
-import { Box, Typography, Stack, Divider, Grid } from '@mui/material';
+import { Box, Typography, Stack, Divider } from '@mui/material';
 import React, { useState } from 'react';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { theme } from '../../theme';
-import TrendingTopics from './SidebarTrendingTopics';
 import CreatorSection from './SidebarCreatorSection';
-import {
-    TypoStyle,
-    SideBarTitle,
-    SeeAllButton,
-    TopicIcon,
-} from '../../styledComponents/SidebarStyledComp';
-import AddIcon from '@mui/icons-material/Add';
+import { TypoStyle } from '../../styledComponents/SidebarStyledComp';
+import SidebarTopicsSections from './SidebarTopicsSections';
+import Footer from '../Footer';
 
 const Sidebar = () => {
     const [page, setPage] = useState('related');
@@ -112,38 +107,10 @@ const Sidebar = () => {
             <Divider />
             <CreatorSection creatorsList={creatorsList} />
             <Divider />
-            <Box p="22px 10px 5px 0px">
-                <SideBarTitle>Trending Topics</SideBarTitle>
-                <Grid container mt="19px" ml="-5px">
-                    {trendingTopics.map((trendingTopic) => {
-                        return (
-                            <TrendingTopics
-                                key={trendingTopic.id}
-                                topic={trendingTopic.topic}
-                                icon={
-                                    <TopicIcon
-                                        src="images/light.svg"
-                                        alt="trending_topic"
-                                    />
-                                }
-                            />
-                        );
-                    })}
-                </Grid>
-                <Box ml="-5px" mt="14px">
-                    <TrendingTopics
-                        topic={'New Topic'}
-                        icon={<AddIcon color="primary" />}
-                    />
-                </Box>
-                <Box>
-                    <SeeAllButton
-                        variant="text"
-                        onClick={() => console.log('see all')}
-                    >
-                        See All
-                    </SeeAllButton>
-                </Box>
+            <SidebarTopicsSections trendingTopics={trendingTopics} />
+            <Divider />
+            <Box sx={{ display: 'flex', justifyContent: 'start' }}>
+                <Footer />
             </Box>
         </Box>
     );

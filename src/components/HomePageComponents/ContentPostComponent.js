@@ -121,7 +121,6 @@ const PostComponent = (props) => {
                     marginBottom: '50px',
                     width: '420px',
                     color: 'rgba(0, 0, 0, 0.2)',
-                    border: '1px solid rgba(0, 0, 0, 0.2)',
                 }}
             />
         </Box>

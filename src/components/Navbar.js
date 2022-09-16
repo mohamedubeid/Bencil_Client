@@ -32,7 +32,7 @@ const Navbar = () => {
         >
             <StyledToolbar disableGutters>
                 <Logo src="images/logo.svg" alt="logo" />
-                <LogoImage src="images/logo_image.svg" alt="logo_image" />
+                <LogoImage src="images/logo_image.png" alt="logo_image" />
                 <Search>
                     <InputBase
                         sx={{
@@ -91,7 +91,6 @@ const Navbar = () => {
                     </Icons>
                 </Icons>
             </StyledToolbar>
-            <Divider />
         </AppBar>
     );
 };

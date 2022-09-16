@@ -54,8 +54,8 @@ export const UserAvatar = styled(Avatar)(({ theme }) => ({
 
 export const Logo = styled('img')(({ theme }) => ({
     display: 'inline',
-    width: '182px',
-    height: '36px',
+    width: '180px',
+    height: '33px',
     [theme.breakpoints.down('md')]: {
         display: 'none',
     },

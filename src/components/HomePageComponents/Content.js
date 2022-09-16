@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import React from 'react';
+import Footer from '../Footer';
 import PostComponent from './ContentPostComponent';
 
 const Content = () => {
@@ -29,9 +30,14 @@ const Content = () => {
     ];
     return (
         <Box flex={2.1} pt={'45px'}>
-            {ListOfPosts.map((post) => {
-                return <PostComponent postData={post} key={post.id} />;
-            })}
+            <Box>
+                {ListOfPosts.map((post) => {
+                    return <PostComponent postData={post} key={post.id} />;
+                })}
+            </Box>
+            <Box p={2} display={{ xs: 'block', md: 'none' }}>
+                <Footer />
+            </Box>
         </Box>
     );
 };

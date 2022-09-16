@@ -42,3 +42,14 @@ export const TopicButton = styled(Button)(({ theme }) => ({
     padding: 0,
     color: '#000000',
 }));
+
+export const NavTypo = styled(Typography)(({ theme }) => ({
+    fontSize: '12px',
+    fontWeight: '600',
+    color: '#8E8F94',
+    lineHeight: '15px',
+    cursor: 'pointer',
+    '&:hover': {
+        textDecoration: 'underline',
+    },
+}));
