@@ -26,6 +26,7 @@ export const UserName = styled(Typography)(({ theme }) => ({
 export const SeeAllButton = styled(Button)(({ theme }) => ({
     textTransform: 'none',
     fontWeight: '600',
+    display: 'block',
     fontSize: '12px',
     marginTop: '22.5px',
     '&:hover': { backgroundColor: 'transparent' },
@@ -41,6 +42,7 @@ export const TopicButton = styled(Button)(({ theme }) => ({
     backgroundColor: '#00000066',
     padding: 0,
     color: '#000000',
+    textTransform: 'none',
 }));
 
 export const NavTypo = styled(Typography)(({ theme }) => ({

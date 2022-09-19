@@ -1,9 +1,17 @@
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import { Divider, Container } from '@mui/material';
+import authContext from './auth-context';
+
 function App() {
+    const [isLoggedIn, setLoggedIn] = useState(false);
+    const logIn = () => {
+        setLoggedIn(!isLoggedIn);
+    };
+
     return (
-        <>
+        <authContext.Provider value={{ status: isLoggedIn, login: logIn }}>
             <Container
                 disableGutters
                 sx={{
@@ -37,7 +45,7 @@ function App() {
             >
                 <HomePage />
             </Container>
-        </>
+        </authContext.Provider>
     );
 }
 

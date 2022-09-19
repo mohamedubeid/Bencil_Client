@@ -1,12 +1,5 @@
-import React from 'react';
-import {
-    AppBar,
-    InputBase,
-    Button,
-    Badge,
-    IconButton,
-    Divider,
-} from '@mui/material';
+import React, { useContext } from 'react';
+import { AppBar, InputBase, Button, Badge, IconButton } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import SearchIcon from '@mui/icons-material/Search';
@@ -20,9 +13,10 @@ import {
     LogoImage,
     BadgeStyle,
 } from '../styledComponents/NavbarStyledComp.js';
+import authContext from '../auth-context.js';
 
 const Navbar = () => {
-    const loggedIn = true;
+    const auth = useContext(authContext);
     return (
         <AppBar
             sx={{
@@ -37,6 +31,9 @@ const Navbar = () => {
                     <InputBase
                         sx={{
                             padding: '6px 1rem',
+                            fontSize: '13px',
+                            fontWeight: '400',
+                            color: '#000',
                         }}
                         fullWidth
                         placeholder="Search"
@@ -48,11 +45,12 @@ const Navbar = () => {
                     <UploadButton variant="outlined">Upload</UploadButton>
                     <Button
                         variant="contained"
-                        sx={{ display: loggedIn ? 'none' : 'inline' }}
+                        sx={{ display: auth.status ? 'none' : 'inline' }}
+                        onClick={auth.login}
                     >
                         Log in
                     </Button>
-                    <Icons sx={{ display: !loggedIn ? 'none' : 'flex' }}>
+                    <Icons sx={{ display: !auth.status ? 'none' : 'flex' }}>
                         <IconButton
                             onClick={() =>
                                 console.log('this is notifications icon button')

@@ -11,7 +11,7 @@ const CreatorSection = (props) => {
     return (
         <Box pt="22px" pb="37px">
             <SideBarTitle>Creators in your field (Marketer)</SideBarTitle>
-            <Stack sx={{ pt: '26px' }} spacing="25px">
+            <Stack sx={{ pt: '26px' }} spacing="25px" display="inline-block">
                 {creatorsList.map((creator) => {
                     return (
                         <CreatorInfo creatorInfo={creator} key={creator.id} />

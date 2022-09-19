@@ -7,6 +7,7 @@ import CreatorSection from './SidebarCreatorSection';
 import { TypoStyle } from '../../styledComponents/SidebarStyledComp';
 import SidebarTopicsSections from './SidebarTopicsSections';
 import Footer from '../Footer';
+import SidebarLoginComponent from './SidebarLoginComponent';
 
 const Sidebar = () => {
     const [page, setPage] = useState('related');
@@ -69,7 +70,7 @@ const Sidebar = () => {
     return (
         <Box flex={1} sx={{ display: { xs: 'none', md: 'block' } }}>
             <Box sx={{ p: '40px 0px 34px 15px' }}>
-                <Stack direction="column" spacing="41px">
+                <Stack direction="column" spacing="41px" display="inline-block">
                     <Stack
                         direction="row"
                         spacing={'5px'}
@@ -104,6 +105,8 @@ const Sidebar = () => {
                     </Stack>
                 </Stack>
             </Box>
+            <Divider />
+            <SidebarLoginComponent />
             <Divider />
             <CreatorSection creatorsList={creatorsList} />
             <Divider />

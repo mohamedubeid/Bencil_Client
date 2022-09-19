@@ -48,6 +48,7 @@ export const UploadButton = styled(Button)(({ theme }) => ({
 
 export const UserAvatar = styled(Avatar)(({ theme }) => ({
     height: '44px',
+    marginLeft: '15px',
     width: '44px',
     border: `1px solid ${theme.palette.primary.main}`,
 }));

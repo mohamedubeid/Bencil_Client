@@ -7,6 +7,15 @@ import {
     ReactionsButton,
 } from '../../styledComponents/ContentStyledComp';
 
+const ReactionsNumberStyle = {
+    color: '#000',
+    fontWeight: 400,
+    fontSize: '10px',
+    lineHeight: '12.19px',
+    textAlign: 'center',
+    mt: '3.5px',
+};
+
 const PostComponent = (props) => {
     const { userInfo, text, topic, image } = props.postData;
     const [isInsightful, setInsightful] = useState(false);
@@ -66,52 +75,76 @@ const PostComponent = (props) => {
                         direction="column"
                         sx={{
                             right: '0px',
-                            top: '50%',
+                            top: '40%',
                         }}
                         spacing="30px"
                     >
-                        <ReactionsButton
-                            onClick={() => setInsightful(!isInsightful)}
-                        >
-                            {isInsightful ? (
-                                <img
-                                    src="images/insightfuled.svg"
-                                    alt="insightful"
-                                    width="29px"
-                                    height="40px"
-                                />
-                            ) : (
-                                <img
-                                    src="images/insightful2.svg"
-                                    alt="insightful"
-                                    // width="29px"
-                                    // height="40px"
-                                />
-                            )}
-                        </ReactionsButton>
-                        <ReactionsButton onClick={() => console.log('comment')}>
-                            <img src="images/comment2.svg" alt="comment" />
-                        </ReactionsButton>
-                        <ReactionsButton onClick={() => console.log('share')}>
-                            <img src="images/share2.svg" alt="share" />
-                        </ReactionsButton>
-                        <ReactionsButton onClick={() => setSaved(!isSaved)}>
-                            {isSaved ? (
-                                <img
-                                    src="images/saved.svg"
-                                    alt="save"
-                                    width="29px"
-                                    height="40px"
-                                />
-                            ) : (
-                                <img
-                                    src="images/save2.svg"
-                                    alt="save"
-                                    // width="29px"
-                                    // height="40px"
-                                />
-                            )}
-                        </ReactionsButton>
+                        <Box>
+                            <ReactionsButton
+                                onClick={() => setInsightful(!isInsightful)}
+                            >
+                                {isInsightful ? (
+                                    <img
+                                        src="images/insightful_colored.svg"
+                                        alt="insightful"
+                                        width="29px"
+                                        height="40px"
+                                    />
+                                ) : (
+                                    <img
+                                        src="images/insightful.svg"
+                                        alt="insightful"
+                                        width="29px"
+                                        height="40px"
+                                    />
+                                )}
+                            </ReactionsButton>
+                            <Typography sx={ReactionsNumberStyle}>
+                                64
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <ReactionsButton
+                                onClick={() => console.log('comment')}
+                            >
+                                <img src="images/comment.svg" alt="comment" />
+                            </ReactionsButton>
+                            <Typography sx={ReactionsNumberStyle}>
+                                64
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <ReactionsButton
+                                onClick={() => console.log('share')}
+                            >
+                                <img src="images/share.svg" alt="share" />
+                            </ReactionsButton>
+                            <Typography sx={ReactionsNumberStyle}>
+                                share
+                            </Typography>
+                        </Box>
+                        <Box>
+                            <ReactionsButton onClick={() => setSaved(!isSaved)}>
+                                {isSaved ? (
+                                    <img
+                                        src="images/save_colored.svg"
+                                        alt="save"
+                                        width="29px"
+                                        height="40px"
+                                    />
+                                ) : (
+                                    <img
+                                        src="images/save.svg"
+                                        alt="save"
+                                        width="29px"
+                                        height="40px"
+                                    />
+                                )}
+                            </ReactionsButton>
+                            <Typography sx={ReactionsNumberStyle}>
+                                save
+                            </Typography>
+                        </Box>
                     </Stack>
                 </Box>
             </Box>
