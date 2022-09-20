@@ -6,12 +6,16 @@ import { Name, UserName } from '../../styledComponents/ContentStyledComp';
 
 const PostUserInfo = (props) => {
     return (
-        <Stack direction="row" alignItems="center" spacing={'55.5px'}>
+        <Stack
+            direction="row"
+            alignItems="center"
+            spacing={{ xs: '13%', lg: '40px', xl: '13%' }}
+        >
             <Stack direction="row" alignItems="center" spacing={1.5}>
                 <Avatar
                     sx={{
-                        width: '54.5px',
-                        height: '54.5px',
+                        width: { xs: '50px', md: '54.5px' },
+                        height: { xs: '50px', md: '54.5px' },
                     }}
                     alt="Mohamed Ubeid"
                     src={`${props.avatar}`}

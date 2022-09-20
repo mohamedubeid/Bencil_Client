@@ -1,5 +1,12 @@
 import React, { useContext } from 'react';
-import { AppBar, InputBase, Button, Badge, IconButton } from '@mui/material';
+import {
+    AppBar,
+    InputBase,
+    Button,
+    Badge,
+    IconButton,
+    Stack,
+} from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import SearchIcon from '@mui/icons-material/Search';
@@ -14,6 +21,7 @@ import {
     BadgeStyle,
 } from '../styledComponents/NavbarStyledComp.js';
 import authContext from '../auth-context.js';
+import { theme } from '../theme.js';
 
 const Navbar = () => {
     const auth = useContext(authContext);
@@ -21,6 +29,15 @@ const Navbar = () => {
         <AppBar
             sx={{
                 position: { xs: 'static', md: 'sticky' },
+                maxWidth: {
+                    xs: '95%',
+                    sm: '540px',
+                    md: '720px',
+                    lg: '960px',
+                    xl: '1140px',
+                },
+                m: 'auto',
+                p: 0,
             }}
             color="background"
         >
@@ -42,14 +59,23 @@ const Navbar = () => {
                     />
                 </Search>
                 <Icons>
-                    <UploadButton variant="outlined">Upload</UploadButton>
-                    <Button
-                        variant="contained"
-                        sx={{ display: auth.status ? 'none' : 'inline' }}
-                        onClick={auth.login}
-                    >
-                        Log in
-                    </Button>
+                    <Stack direction="row" spacing={{ xs: '10px', md: '20px' }}>
+                        <UploadButton variant="outlined">Upload</UploadButton>
+                        <Button
+                            variant="contained"
+                            sx={{
+                                display: auth.status ? 'none' : 'inline',
+                                [theme.breakpoints.down('sm')]: {
+                                    padding: '8px 18px',
+                                    fontWeight: 600,
+                                    fontSize: '12px',
+                                },
+                            }}
+                            onClick={auth.login}
+                        >
+                            Login
+                        </Button>
+                    </Stack>
                     <Icons sx={{ display: !auth.status ? 'none' : 'flex' }}>
                         <IconButton
                             onClick={() =>

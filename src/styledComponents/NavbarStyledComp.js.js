@@ -25,7 +25,7 @@ export const Search = styled('div')(({ theme }) => ({
 
 export const Icons = styled(Box)(({ theme }) => ({
     alignItems: 'center',
-    gap: '0.3em',
+    gap: '0.3rem',
     display: 'flex',
 }));
 
@@ -39,7 +39,7 @@ export const UploadButton = styled(Button)(({ theme }) => ({
     lineHeight: '18.29px',
     border: '2px solid #E3E3E4',
     [theme.breakpoints.up('sm')]: {
-        display: 'inline',
+        display: 'block',
     },
     '&:hover': {
         border: `2px solid ${theme.palette.primary.main}`,
@@ -48,14 +48,14 @@ export const UploadButton = styled(Button)(({ theme }) => ({
 
 export const UserAvatar = styled(Avatar)(({ theme }) => ({
     height: '44px',
-    marginLeft: '15px',
     width: '44px',
     border: `1px solid ${theme.palette.primary.main}`,
 }));
 
 export const Logo = styled('img')(({ theme }) => ({
     display: 'inline',
-    width: '180px',
+    width: '145px',
+    marginLeft: '10px',
     height: '33px',
     [theme.breakpoints.down('md')]: {
         display: 'none',
@@ -66,7 +66,7 @@ export const LogoImage = styled('img')(({ theme }) => ({
     display: 'inline',
     width: '43px',
     height: '42px',
-    marginLeft: '15px',
+    // marginLeft: '15px',
     [theme.breakpoints.up('md')]: {
         display: 'none',
     },

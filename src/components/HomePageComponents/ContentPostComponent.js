@@ -75,7 +75,7 @@ const PostComponent = (props) => {
                         direction="column"
                         sx={{
                             right: '0px',
-                            top: '40%',
+                            top: '37%',
                         }}
                         spacing="30px"
                     >
@@ -85,14 +85,14 @@ const PostComponent = (props) => {
                             >
                                 {isInsightful ? (
                                     <img
-                                        src="images/insightful_colored.svg"
+                                        src="images/insightfull_on.svg"
                                         alt="insightful"
                                         width="29px"
                                         height="40px"
                                     />
                                 ) : (
                                     <img
-                                        src="images/insightful.svg"
+                                        src="images/insightfull_off.svg"
                                         alt="insightful"
                                         width="29px"
                                         height="40px"
@@ -107,7 +107,12 @@ const PostComponent = (props) => {
                             <ReactionsButton
                                 onClick={() => console.log('comment')}
                             >
-                                <img src="images/comment.svg" alt="comment" />
+                                <img
+                                    src="images/comments.svg"
+                                    alt="save"
+                                    width="29px"
+                                    height="40px"
+                                />
                             </ReactionsButton>
                             <Typography sx={ReactionsNumberStyle}>
                                 64
@@ -117,7 +122,12 @@ const PostComponent = (props) => {
                             <ReactionsButton
                                 onClick={() => console.log('share')}
                             >
-                                <img src="images/share.svg" alt="share" />
+                                <img
+                                    src="images/share.svg"
+                                    alt="save"
+                                    width="29px"
+                                    height="40px"
+                                />
                             </ReactionsButton>
                             <Typography sx={ReactionsNumberStyle}>
                                 share
@@ -127,14 +137,14 @@ const PostComponent = (props) => {
                             <ReactionsButton onClick={() => setSaved(!isSaved)}>
                                 {isSaved ? (
                                     <img
-                                        src="images/save_colored.svg"
+                                        src="images/save_on.svg"
                                         alt="save"
                                         width="29px"
                                         height="40px"
                                     />
                                 ) : (
                                     <img
-                                        src="images/save.svg"
+                                        src="images/save_off.svg"
                                         alt="save"
                                         width="29px"
                                         height="40px"
@@ -150,9 +160,8 @@ const PostComponent = (props) => {
             </Box>
             <Divider
                 sx={{
-                    marginTop: '50px',
-                    marginBottom: '50px',
-                    width: '420px',
+                    m: '50px auto',
+                    width: '100%',
                     color: 'rgba(0, 0, 0, 0.2)',
                 }}
             />

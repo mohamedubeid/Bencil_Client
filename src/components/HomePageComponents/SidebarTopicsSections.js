@@ -27,15 +27,22 @@ const SidebarTopicsSections = ({ trendingTopics }) => {
                         />
                     );
                 })}
-            </Grid>
-            <Box ml="-5px" mt="14px">
+                {/* <Box ml="-5px" mt="14px"> */}
                 <TrendingTopics
                     topic={'New Topic'}
                     icon={<AddIcon color="primary" />}
                 />
-            </Box>
+                {/* </Box> */}
+            </Grid>
+            {/* <Box ml="-5px" mt="14px">
+                <TrendingTopics
+                    topic={'New Topic'}
+                    icon={<AddIcon color="primary" />}
+                />
+            </Box> */}
             <Box>
                 <SeeAllButton
+                    disableRipple
                     variant="text"
                     onClick={() => console.log('see all')}
                 >

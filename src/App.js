@@ -12,28 +12,18 @@ function App() {
 
     return (
         <authContext.Provider value={{ status: isLoggedIn, login: logIn }}>
-            <Container
-                disableGutters
+            <Navbar />
+            <Divider
                 sx={{
-                    maxWidth: {
-                        xs: '100%',
-                        sm: '540px',
-                        md: '720px',
-                        lg: '960px',
-                        xl: '1140px',
-                    },
-                    m: 'auto',
-                    p: 0,
+                    width: '100%',
+                    position: { xs: 'static', md: 'fixed' },
                 }}
-            >
-                <Navbar />
-            </Container>
-            <Divider />
+            />
             <Container
                 disableGutters
                 sx={{
                     maxWidth: {
-                        xs: '100%',
+                        xs: '95%',
                         sm: '540px',
                         md: '720px',
                         lg: '960px',

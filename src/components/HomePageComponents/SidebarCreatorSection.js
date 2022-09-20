@@ -18,7 +18,11 @@ const CreatorSection = (props) => {
                     );
                 })}
             </Stack>
-            <SeeAllButton variant="text" onClick={() => console.log('see all')}>
+            <SeeAllButton
+                disableRipple
+                variant="text"
+                onClick={() => console.log('see all')}
+            >
                 See All
             </SeeAllButton>
         </Box>

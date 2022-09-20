@@ -28,6 +28,8 @@ export const SeeAllButton = styled(Button)(({ theme }) => ({
     fontWeight: '600',
     display: 'block',
     fontSize: '12px',
+    paddingLeft: 0,
+    marginLeft: -1,
     marginTop: '22.5px',
     '&:hover': { backgroundColor: 'transparent' },
 }));

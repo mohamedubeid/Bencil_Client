@@ -77,7 +77,7 @@ const Sidebar = () => {
                         color={
                             page === 'related'
                                 ? theme.palette.primary.main
-                                : theme.palette.primary.light
+                                : '#000'
                         }
                         sx={{
                             cursor: 'pointer',
@@ -93,7 +93,10 @@ const Sidebar = () => {
                         direction="row"
                         spacing={'5px'}
                         sx={{
-                            color: page === 'network' ? '#000' : '#000000cd',
+                            color:
+                                page === 'network'
+                                    ? theme.palette.primary.main
+                                    : '#000',
                             cursor: 'pointer',
                         }}
                         onClick={() => setPage('network')}
