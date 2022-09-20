@@ -1,4 +1,4 @@
-import { styled, Toolbar, Box, Button, Avatar } from '@mui/material';
+import { styled, Toolbar, Box, Button, Avatar, MenuItem } from '@mui/material';
 
 export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: 'flex',
@@ -7,10 +7,10 @@ export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     marginBottom: '5px',
 }));
 
-export const Search = styled('div')(({ theme }) => ({
+export const Search = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.secondary.light,
     minWidth: '100px',
-    width: '25%',
+    width: '100%',
     borderRadius: '24.3197px',
     input: {
         '&::placeholder': {
@@ -63,16 +63,18 @@ export const Logo = styled('img')(({ theme }) => ({
 }));
 
 export const LogoImage = styled('img')(({ theme }) => ({
-    display: 'inline',
     width: '43px',
     height: '42px',
-    // marginLeft: '15px',
-    [theme.breakpoints.up('md')]: {
-        display: 'none',
-    },
 }));
 
 export const BadgeStyle = {
     width: '25px',
     height: '25px',
 };
+
+export const MenuItemStyled = styled(MenuItem)(({ theme }) => ({
+    fontWeight: '600',
+    fontSize: '12.82px',
+    lineHeight: '15.62px',
+    paddingLeft: '27.35px',
+}));

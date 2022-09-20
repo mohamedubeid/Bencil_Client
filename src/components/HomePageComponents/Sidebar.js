@@ -1,5 +1,5 @@
 import { Box, Typography, Stack, Divider } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { theme } from '../../theme';
@@ -8,9 +8,11 @@ import { TypoStyle } from '../../styledComponents/SidebarStyledComp';
 import SidebarTopicsSections from './SidebarTopicsSections';
 import Footer from '../Footer';
 import SidebarLoginComponent from './SidebarLoginComponent';
+import authContext from '../../auth-context.js';
 
 const Sidebar = () => {
     const [page, setPage] = useState('related');
+    const auth = useContext(authContext);
     const creatorsList = [
         {
             id: 1,
@@ -84,7 +86,7 @@ const Sidebar = () => {
                         }}
                         onClick={() => setPage('related')}
                     >
-                        <FavoriteIcon sx={{ fontSize: '30px' }} />
+                        <FavoriteIcon sx={{ fontSize: '32px' }} />
                         <Typography variant="h6" sx={TypoStyle}>
                             Related
                         </Typography>
@@ -101,14 +103,14 @@ const Sidebar = () => {
                         }}
                         onClick={() => setPage('network')}
                     >
-                        <PeopleAltIcon sx={{ fontSize: '30px' }} />
+                        <PeopleAltIcon sx={{ fontSize: '32px' }} />
                         <Typography variant="h6" sx={TypoStyle}>
                             Network
                         </Typography>
                     </Stack>
                 </Stack>
             </Box>
-            <Divider />
+            <Divider sx={{ display: auth.status ? 'none' : 'block' }} />
             <SidebarLoginComponent />
             <Divider />
             <CreatorSection creatorsList={creatorsList} />

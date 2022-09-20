@@ -3,7 +3,7 @@ import { styled, Typography, Button } from '@mui/material';
 export const TypoStyle = {
     fontSIze: '20px',
     fontWeight: '700',
-    lineHeight: '30px',
+    lineHeight: '35px',
 };
 
 export const SideBarTitle = styled(Typography)(({ theme }) => ({
@@ -29,7 +29,7 @@ export const SeeAllButton = styled(Button)(({ theme }) => ({
     display: 'block',
     fontSize: '12px',
     paddingLeft: 0,
-    marginLeft: -1,
+    marginLeft: -2,
     marginTop: '22.5px',
     '&:hover': { backgroundColor: 'transparent' },
 }));

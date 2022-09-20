@@ -6,6 +6,7 @@ import {
     Badge,
     IconButton,
     Stack,
+    Box,
 } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -22,13 +23,22 @@ import {
 } from '../styledComponents/NavbarStyledComp.js';
 import authContext from '../auth-context.js';
 import { theme } from '../theme.js';
+import AccountMenu from './HomePageComponents/AccountMenu.js';
 
 const Navbar = () => {
     const auth = useContext(authContext);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     return (
         <AppBar
             sx={{
                 position: { xs: 'static', md: 'sticky' },
+                paddingRight: '0px!important',
                 maxWidth: {
                     xs: '95%',
                     sm: '540px',
@@ -43,11 +53,23 @@ const Navbar = () => {
         >
             <StyledToolbar disableGutters>
                 <Logo src="images/logo.svg" alt="logo" />
-                <LogoImage src="images/logo_image.png" alt="logo_image" />
-                <Search>
+                <Box
+                    sx={{
+                        marginRight: { xs: '5px', md: '0' },
+                        display: { xs: 'flex', md: 'none' },
+                    }}
+                >
+                    <LogoImage src="images/logo_image.png" alt="logo_image" />
+                </Box>
+                <Search
+                    sx={{
+                        marginRight: { xs: 'auto', md: '0' },
+                        width: { xs: '38%', md: '29%' },
+                    }}
+                >
                     <InputBase
                         sx={{
-                            padding: '6px 1rem',
+                            padding: '8px 1rem',
                             fontSize: '13px',
                             fontWeight: '400',
                             color: '#000',
@@ -108,13 +130,16 @@ const Navbar = () => {
                                 />
                             </Badge>
                         </IconButton>
-                        <UserAvatar
-                            src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                            alt="Mohamed Ubeid"
-                        />
+                        <IconButton onClick={handleClick}>
+                            <UserAvatar
+                                src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                                alt="Mohamed Ubeid"
+                            />
+                        </IconButton>
                     </Icons>
                 </Icons>
             </StyledToolbar>
+            <AccountMenu anchorEl={anchorEl} handleClose={handleClose} />
         </AppBar>
     );
 };
