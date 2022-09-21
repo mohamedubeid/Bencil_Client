@@ -74,7 +74,7 @@ const PostComponent = (props) => {
                         position="absolute"
                         direction="column"
                         sx={{
-                            right: '0px',
+                            right: '5px',
                             top: '37%',
                         }}
                         spacing="30px"

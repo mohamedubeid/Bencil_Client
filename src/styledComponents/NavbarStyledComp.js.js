@@ -1,32 +1,31 @@
 import { styled, Toolbar, Box, Button, Avatar, MenuItem } from '@mui/material';
 
-export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+export const StyledToolbar = styled(Toolbar)(() => ({
     display: 'flex',
     justifyContent: 'space-between',
     marginTop: '5px',
+    height: '64px',
     marginBottom: '5px',
 }));
 
 export const Search = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.secondary.light,
-    minWidth: '100px',
-    width: '100%',
+    minWidth: '90px',
+    // width: '100%',
     borderRadius: '24.3197px',
     input: {
         '&::placeholder': {
-            fontWeight: '400',
-            opacity: '60%',
+            fontSize: '13px',
+            fontWeight: '600',
+            opacity: '90%',
         },
+    },
+    [theme.breakpoints.up('md')]: {
+        display: 'block',
     },
     '&:hover': {
         backgroundColor: theme.palette.secondary.main,
     },
-}));
-
-export const Icons = styled(Box)(({ theme }) => ({
-    alignItems: 'center',
-    gap: '0.3rem',
-    display: 'flex',
 }));
 
 export const UploadButton = styled(Button)(({ theme }) => ({
@@ -38,7 +37,7 @@ export const UploadButton = styled(Button)(({ theme }) => ({
     fontSize: '15px',
     lineHeight: '18.29px',
     border: '2px solid #E3E3E4',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
         display: 'block',
     },
     '&:hover': {
@@ -62,7 +61,7 @@ export const Logo = styled('img')(({ theme }) => ({
     },
 }));
 
-export const LogoImage = styled('img')(({ theme }) => ({
+export const LogoImage = styled('img')(() => ({
     width: '43px',
     height: '42px',
 }));
@@ -72,7 +71,7 @@ export const BadgeStyle = {
     height: '25px',
 };
 
-export const MenuItemStyled = styled(MenuItem)(({ theme }) => ({
+export const MenuItemStyled = styled(MenuItem)(() => ({
     fontWeight: '600',
     fontSize: '12.82px',
     lineHeight: '15.62px',

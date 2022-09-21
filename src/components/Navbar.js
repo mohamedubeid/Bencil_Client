@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import {
     AppBar,
     InputBase,
@@ -7,6 +7,7 @@ import {
     IconButton,
     Stack,
     Box,
+    Tooltip,
 } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -14,7 +15,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import {
     Search,
     StyledToolbar,
-    Icons,
     UploadButton,
     UserAvatar,
     Logo,
@@ -23,11 +23,12 @@ import {
 } from '../styledComponents/NavbarStyledComp.js';
 import authContext from '../auth-context.js';
 import { theme } from '../theme.js';
-import AccountMenu from './HomePageComponents/AccountMenu.js';
+import AccountMenu from './NavbarComponents/AccountMenu.js';
+import AddIcon from '@mui/icons-material/Add';
 
 const Navbar = () => {
     const auth = useContext(authContext);
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -37,7 +38,7 @@ const Navbar = () => {
     return (
         <AppBar
             sx={{
-                position: { xs: 'static', md: 'sticky' },
+                position: 'sticky',
                 paddingRight: '0px!important',
                 maxWidth: {
                     xs: '95%',
@@ -63,16 +64,14 @@ const Navbar = () => {
                 </Box>
                 <Search
                     sx={{
-                        marginRight: { xs: 'auto', md: '0' },
-                        width: { xs: '38%', md: '29%' },
+                        marginRight: { xs: 'auto', md: '-70px', lg: '-60px' },
+                        width: { xs: '35%', md: '29%' },
                     }}
                 >
                     <InputBase
                         sx={{
                             padding: '8px 1rem',
                             fontSize: '13px',
-                            fontWeight: '400',
-                            color: '#000',
                         }}
                         fullWidth
                         placeholder="Search"
@@ -80,17 +79,41 @@ const Navbar = () => {
                         endAdornment={<SearchIcon sx={{ opacity: '0.4' }} />}
                     />
                 </Search>
-                <Icons>
-                    <Stack direction="row" spacing={{ xs: '10px', md: '20px' }}>
+                <Stack
+                    direction="row"
+                    alignItems="center"
+                    spacing={{ xs: '-8px', md: '-5px', lg: '10px' }}
+                >
+                    <Stack
+                        direction="row"
+                        spacing={{ xs: '15px', sm: '20px' }}
+                        alignItems="center"
+                    >
                         <UploadButton variant="outlined">Upload</UploadButton>
+                        <IconButton
+                            size="small"
+                            sx={{
+                                display: { xs: 'block', md: 'none' },
+                            }}
+                            onClick={() => console.log('Upload Icon')}
+                        >
+                            <Tooltip title="Upload">
+                                <AddIcon
+                                    sx={{ pt: 1 }}
+                                    fontSize="large"
+                                    // color={theme.palette.primary}
+                                    color="primary"
+                                />
+                            </Tooltip>
+                        </IconButton>
                         <Button
                             variant="contained"
                             sx={{
                                 display: auth.status ? 'none' : 'inline',
                                 [theme.breakpoints.down('sm')]: {
-                                    padding: '8px 18px',
+                                    padding: '10px 20px',
                                     fontWeight: 600,
-                                    fontSize: '12px',
+                                    fontSize: '14px',
                                 },
                             }}
                             onClick={auth.login}
@@ -98,13 +121,18 @@ const Navbar = () => {
                             Login
                         </Button>
                     </Stack>
-                    <Icons sx={{ display: !auth.status ? 'none' : 'flex' }}>
+                    <Stack
+                        direction="row"
+                        spacing={{ xs: '-5px', sm: '0px' }}
+                        sx={{ display: !auth.status ? 'none' : 'flex' }}
+                    >
                         <IconButton
+                            disableRipple
                             onClick={() =>
                                 console.log('this is notifications icon button')
                             }
                         >
-                            <Badge badgeContent={4} color="primary">
+                            <Badge color="primary">
                                 <NotificationsIcon
                                     color="action"
                                     sx={BadgeStyle}
@@ -112,20 +140,18 @@ const Navbar = () => {
                             </Badge>
                         </IconButton>
                         <IconButton
+                            disableRipple
+                            size="small"
                             onClick={() =>
                                 console.log('this is messages icon button')
                             }
                         >
-                            <Badge
-                                badgeContent={4}
-                                color="primary"
-                                sx={{ marginTop: '5px' }}
-                            >
+                            <Badge color="primary">
                                 <TelegramIcon
                                     color="action"
                                     sx={{
-                                        width: '28px',
-                                        height: '28px',
+                                        width: '26px',
+                                        height: '26px',
                                     }}
                                 />
                             </Badge>
@@ -136,8 +162,8 @@ const Navbar = () => {
                                 alt="Mohamed Ubeid"
                             />
                         </IconButton>
-                    </Icons>
-                </Icons>
+                    </Stack>
+                </Stack>
             </StyledToolbar>
             <AccountMenu anchorEl={anchorEl} handleClose={handleClose} />
         </AppBar>

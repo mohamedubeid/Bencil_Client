@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from '@mui/material/Menu';
 import Divider from '@mui/material/Divider';
-import { MenuItemStyled } from '../../styledComponents/NavbarStyledComp.js';
+import { MenuItemStyled } from '../../styledComponents/NavbarStyledComp.js.js';
 
 const AccountMenu = ({ anchorEl, handleClose }) => {
     const open = Boolean(anchorEl);
@@ -18,7 +18,6 @@ const AccountMenu = ({ anchorEl, handleClose }) => {
                 sx: {
                     ml: 1,
                     borderRadius: '7.20942px',
-                    p: '5px 0px',
                     width: '127px',
                     boxShadow: '0px 3.20419px 5.20419px rgba(0, 0, 0, 0.25)',
                     mt: 1.5,
@@ -39,9 +38,19 @@ const AccountMenu = ({ anchorEl, handleClose }) => {
                 vertical: 'bottom',
             }}
         >
-            <MenuItemStyled>My Profile</MenuItemStyled>
-            <MenuItemStyled>Setting</MenuItemStyled>
-            <MenuItemStyled>Feedback</MenuItemStyled>
+            <MenuItemStyled sx={{ paddingTop: '8px', paddingBottom: '8px' }}>
+                My Profile
+            </MenuItemStyled>
+            <MenuItemStyled
+                sx={{ paddingTop: '8.32px', paddingBottom: '8.32px' }}
+            >
+                Setting
+            </MenuItemStyled>
+            <MenuItemStyled
+                sx={{ paddingTop: '9.23px', paddingBottom: '9.23px' }}
+            >
+                Feedback
+            </MenuItemStyled>
             <Divider />
             <MenuItemStyled>Logout</MenuItemStyled>
         </Menu>
