@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { DialogTitle, Dialog, Typography, Box } from '@mui/material';
 import PopupProfessions from './PopupProfessions';
+import authContext from '../../auth-context.js';
 const ChooseProfessionPopup = (props) => {
     const { onClose, open, Topics } = props;
+    const auth = useContext(authContext);
     return (
         <Dialog
             open={open}
@@ -11,8 +13,9 @@ const ChooseProfessionPopup = (props) => {
                     borderRadius: '20px',
                     paddingTop: '33px',
                     paddingBottom: '30px',
-                    paddingLeft: '41px',
-                    width: '427px',
+                    paddingLeft: { xs: '5%', sm: '41px' },
+                    paddingRight: '5px',
+                    width: { xs: '85%', sm: '427px' },
                 },
             }}
         >
@@ -57,7 +60,7 @@ const ChooseProfessionPopup = (props) => {
                 }}
                 component="div"
             >
-                You already have an account?
+                Have an account?
                 <Typography
                     sx={{
                         fontSize: '12px',
@@ -67,6 +70,10 @@ const ChooseProfessionPopup = (props) => {
                     }}
                     color="primary"
                     display="inline"
+                    onClick={() => {
+                        auth.login();
+                        onClose();
+                    }}
                 >
                     Login here.
                 </Typography>

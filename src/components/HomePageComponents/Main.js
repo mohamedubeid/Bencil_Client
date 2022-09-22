@@ -13,7 +13,9 @@ const Main = () => {
     const [open, setOpen] = useState(true);
 
     const handleClose = (topic) => {
-        console.log(topic);
+        if (!topic === undefined) {
+            console.log(topic);
+        }
         setOpen(false);
     };
 

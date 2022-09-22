@@ -101,7 +101,6 @@ const Navbar = () => {
                                 <AddIcon
                                     sx={{ pt: 1 }}
                                     fontSize="large"
-                                    // color={theme.palette.primary}
                                     color="primary"
                                 />
                             </Tooltip>

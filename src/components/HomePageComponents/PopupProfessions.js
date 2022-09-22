@@ -12,11 +12,11 @@ const PopupProfessions = (props) => {
             >
                 <Typography
                     sx={{
-                        fontSize: '16px',
+                        fontSize: { xs: '12px', sm: '16px' },
                         lineHeight: '25.15px',
                         fontWeight: '700',
                         background: '#D9D9D9',
-                        padding: '8px 32px',
+                        padding: { xs: '5px 12px', sm: '8px 32px' },
                         borderRadius: '18px',
                     }}
                 >
