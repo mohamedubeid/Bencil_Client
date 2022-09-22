@@ -1,6 +1,6 @@
 import { createTheme, alpha } from '@mui/material';
 export const theme = createTheme({
-    shadows: Array(25).fill('none'),
+    shadows: ['none'],
     typography: {
         fontFamily: ['Montserrat', 'Roboto'].join(','),
     },

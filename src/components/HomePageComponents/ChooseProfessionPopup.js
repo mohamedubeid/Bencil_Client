@@ -7,7 +7,7 @@ const ChooseProfessionPopup = (props) => {
         <Dialog
             open={open}
             sx={{
-                '& .css-vqrpqo-MuiPaper-root-MuiDialog-paper': {
+                '& .css-koqloa-MuiPaper-root-MuiDialog-paper': {
                     borderRadius: '20px',
                     paddingTop: '33px',
                     paddingBottom: '30px',
