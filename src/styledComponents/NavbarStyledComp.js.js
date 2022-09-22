@@ -72,8 +72,9 @@ export const BadgeStyle = {
 };
 
 export const MenuItemStyled = styled(MenuItem)(() => ({
-    fontWeight: '600',
+    fontWeight: '700',
     fontSize: '12.82px',
     lineHeight: '15.62px',
     paddingLeft: '27.35px',
+    color: '#000',
 }));

@@ -34,7 +34,7 @@ const Content = () => {
         },
     ];
     return (
-        <Box flex={2.1} pt={{ xs: '20px', md: '45px' }}>
+        <Box flex={2.2} pt={{ xs: '20px', md: '45px' }}>
             <Stack
                 direction="row"
                 spacing="8%"
