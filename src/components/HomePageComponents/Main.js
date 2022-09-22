@@ -1,13 +1,21 @@
 import { Box, Typography, Stack } from '@mui/material';
 import React, { useState } from 'react';
 import Footer from '../Footer';
-import PostComponent from './ContentPostComponent';
+import PostComponent from './PostComponent';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { theme } from '../../theme';
 import { TypoStyle } from '../../styledComponents/SidebarStyledComp';
-const Content = () => {
+import ChooseProfessionPopup from './ChooseProfessionPopup';
+
+const Main = () => {
     const [page, setPage] = useState('related');
+    const [open, setOpen] = useState(true);
+
+    const handleClose = (topic) => {
+        console.log(topic);
+        setOpen(false);
+    };
 
     const ListOfPosts = [
         {
@@ -33,6 +41,17 @@ const Content = () => {
             image: 'images/assets/test_v2.png',
         },
     ];
+
+    const Topics = [
+        'Businessperson/Entrepreneur',
+        'Developer/Programmer',
+        'Designer ',
+        'Marketer ',
+        'Salesperson ',
+        'Investor ',
+        'Accountant /Bookkeeper',
+    ];
+
     return (
         <Box flex={2.2} pt={{ xs: '20px', md: '45px' }}>
             <Stack
@@ -84,8 +103,13 @@ const Content = () => {
             <Box p={2} display={{ xs: 'block', md: 'none' }}>
                 <Footer />
             </Box>
+            <ChooseProfessionPopup
+                open={open}
+                onClose={handleClose}
+                Topics={Topics}
+            />
         </Box>
     );
 };
 
-export default Content;
+export default Main;

@@ -11,7 +11,6 @@ export const StyledToolbar = styled(Toolbar)(() => ({
 export const Search = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.secondary.light,
     minWidth: '90px',
-    // width: '100%',
     borderRadius: '24.3197px',
     input: {
         '&::placeholder': {

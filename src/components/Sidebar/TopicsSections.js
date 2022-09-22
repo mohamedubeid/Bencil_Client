@@ -1,6 +1,6 @@
 import { Box, Grid } from '@mui/material';
 import React from 'react';
-import TrendingTopics from './SidebarTrendingTopics';
+import TrendingTopics from './TrendingTopics';
 import {
     SideBarTitle,
     SeeAllButton,
@@ -8,7 +8,7 @@ import {
 } from '../../styledComponents/SidebarStyledComp';
 import AddIcon from '@mui/icons-material/Add';
 
-const SidebarTopicsSections = ({ trendingTopics }) => {
+const TopicsSections = ({ trendingTopics }) => {
     return (
         <Box p="22px 10px 52px 0px">
             <SideBarTitle>Trending Topics</SideBarTitle>
@@ -27,19 +27,11 @@ const SidebarTopicsSections = ({ trendingTopics }) => {
                         />
                     );
                 })}
-                {/* <Box ml="-5px" mt="14px"> */}
                 <TrendingTopics
                     topic={'New Topic'}
                     icon={<AddIcon color="primary" />}
                 />
-                {/* </Box> */}
             </Grid>
-            {/* <Box ml="-5px" mt="14px">
-                <TrendingTopics
-                    topic={'New Topic'}
-                    icon={<AddIcon color="primary" />}
-                />
-            </Box> */}
             <Box>
                 <SeeAllButton
                     disableRipple
@@ -53,4 +45,4 @@ const SidebarTopicsSections = ({ trendingTopics }) => {
     );
 };
 
-export default SidebarTopicsSections;
+export default TopicsSections;

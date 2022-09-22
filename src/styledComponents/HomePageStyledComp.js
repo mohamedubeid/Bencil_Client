@@ -6,24 +6,24 @@ export const PostFont = {
     color: '#000000',
 };
 
-export const Image = styled('img')(({ theme }) => ({
+export const Image = styled('img')(() => ({
     width: '285px',
     height: '507px',
     borderRadius: '10px',
 }));
 
-export const ReactionsButton = styled(IconButton)(({ theme }) => ({
+export const ReactionsButton = styled(IconButton)(() => ({
     padding: 0,
     margin: 0,
 }));
 
-export const Name = styled(Typography)(({ theme }) => ({
+export const Name = styled(Typography)(() => ({
     fontWeight: '600',
     fontSize: '15px',
     lineHeight: '18.29px',
 }));
 
-export const UserName = styled(Typography)(({ theme }) => ({
+export const UserName = styled(Typography)(() => ({
     fontWeight: '400',
     fontSize: '15px',
     lineHeight: '18.29px',

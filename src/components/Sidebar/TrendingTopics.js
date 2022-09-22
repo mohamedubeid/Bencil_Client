@@ -6,7 +6,7 @@ const TrendingTopics = (props) => {
     const { topic, icon } = props;
     return (
         <Box sx={{ display: 'inline-block', m: '7px 5px' }}>
-            <TopicButton sx={{ borderRadius: '14.2253px' }}>
+            <TopicButton>
                 <Stack
                     direction="row"
                     spacing="3px"

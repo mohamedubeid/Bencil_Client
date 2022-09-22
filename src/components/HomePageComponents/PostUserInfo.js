@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar, Stack, Button } from '@mui/material';
 import { theme } from '../../theme';
 import DoneIcon from '@mui/icons-material/Done';
-import { Name, UserName } from '../../styledComponents/ContentStyledComp';
+import { Name, UserName } from '../../styledComponents/HomePageStyledComp';
 
 const PostUserInfo = (props) => {
     return (

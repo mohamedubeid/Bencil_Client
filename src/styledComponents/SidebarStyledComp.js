@@ -6,24 +6,24 @@ export const TypoStyle = {
     lineHeight: '35px',
 };
 
-export const SideBarTitle = styled(Typography)(({ theme }) => ({
+export const SideBarTitle = styled(Typography)(() => ({
     fontWeight: '700',
     fontSize: '15px',
 }));
 
-export const Name = styled(Typography)(({ theme }) => ({
+export const Name = styled(Typography)(() => ({
     fontWeight: '600',
     fontSize: '12px',
     lineHeight: '14.63px',
 }));
 
-export const UserName = styled(Typography)(({ theme }) => ({
+export const UserName = styled(Typography)(() => ({
     fontWeight: '400',
     fontSize: '12px',
     lineHeight: '14.63px',
 }));
 
-export const SeeAllButton = styled(Button)(({ theme }) => ({
+export const SeeAllButton = styled(Button)(() => ({
     textTransform: 'none',
     fontWeight: '600',
     display: 'block',
@@ -34,20 +34,19 @@ export const SeeAllButton = styled(Button)(({ theme }) => ({
     '&:hover': { backgroundColor: 'transparent' },
 }));
 
-export const TopicIcon = styled('img')(({ theme }) => ({
+export const TopicIcon = styled('img')(() => ({
     width: '8.23px',
     height: '14.48px',
     marginTop: '5px',
 }));
 
-export const TopicButton = styled(Button)(({ theme }) => ({
-    backgroundColor: '#00000066',
+export const TopicButton = styled(Button)(() => ({
     padding: 0,
     color: '#000000',
     textTransform: 'none',
 }));
 
-export const NavTypo = styled(Typography)(({ theme }) => ({
+export const NavTypo = styled(Typography)(() => ({
     fontSize: '12px',
     fontWeight: '600',
     color: '#8E8F94',

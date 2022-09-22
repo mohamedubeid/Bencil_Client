@@ -3,11 +3,11 @@ import React, { useState, useContext } from 'react';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { theme } from '../../theme';
-import CreatorSection from './SidebarCreatorSection';
+import CreatorSection from './CreatorSection';
 import { TypoStyle } from '../../styledComponents/SidebarStyledComp';
-import SidebarTopicsSections from './SidebarTopicsSections';
+import TopicsSections from './TopicsSections';
 import Footer from '../Footer';
-import SidebarLoginComponent from './SidebarLoginComponent';
+import SidebarLoginComponent from './LoginComponent';
 import authContext from '../../auth-context.js';
 
 const Sidebar = () => {
@@ -115,7 +115,7 @@ const Sidebar = () => {
             <Divider />
             <CreatorSection creatorsList={creatorsList} />
             <Divider />
-            <SidebarTopicsSections trendingTopics={trendingTopics} />
+            <TopicsSections trendingTopics={trendingTopics} />
             <Divider />
             <Box sx={{ display: 'flex', justifyContent: 'start' }}>
                 <Footer />

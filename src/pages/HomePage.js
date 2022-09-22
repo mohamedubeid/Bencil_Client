@@ -1,6 +1,6 @@
 import React from 'react';
-import Sidebar from '../components/HomePageComponents/Sidebar';
-import Content from '../components/HomePageComponents/Content';
+import Sidebar from '../components/Sidebar/Sidebar';
+import Main from '../components/HomePageComponents/Main';
 import { Stack, Divider } from '@mui/material';
 const HomePage = () => {
     return (
@@ -11,7 +11,7 @@ const HomePage = () => {
                 flexItem
                 sx={{ display: { xs: 'none', md: 'flex' } }}
             />
-            <Content />
+            <Main />
         </Stack>
     );
 };

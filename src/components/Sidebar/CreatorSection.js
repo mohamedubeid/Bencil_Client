@@ -1,6 +1,6 @@
 import { Box, Stack } from '@mui/material';
 import React from 'react';
-import CreatorInfo from './SidebarCreatorInfo';
+import CreatorInfo from './CreatorInfo';
 import {
     SideBarTitle,
     SeeAllButton,

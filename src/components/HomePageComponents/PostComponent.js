@@ -1,11 +1,11 @@
 import { Box, Typography, Stack, Divider } from '@mui/material';
 import React, { useState } from 'react';
-import PostUserInfo from './ContentPostUserInfo';
+import PostUserInfo from './PostUserInfo';
 import {
     PostFont,
     Image,
     ReactionsButton,
-} from '../../styledComponents/ContentStyledComp';
+} from '../../styledComponents/HomePageStyledComp';
 
 const ReactionsNumberStyle = {
     color: '#000',
