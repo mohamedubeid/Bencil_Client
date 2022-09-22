@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Bencil_Client/static/js/main.d4780350.js",
+    "main.js": "/Bencil_Client/static/js/main.e15fc837.js",
     "index.html": "/Bencil_Client/index.html",
-    "main.d4780350.js.map": "/Bencil_Client/static/js/main.d4780350.js.map"
+    "main.e15fc837.js.map": "/Bencil_Client/static/js/main.e15fc837.js.map"
   },
   "entrypoints": [
-    "static/js/main.d4780350.js"
+    "static/js/main.e15fc837.js"
   ]
 }
