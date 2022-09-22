@@ -7,7 +7,7 @@ const ChooseProfessionPopup = (props) => {
         <Dialog
             open={open}
             sx={{
-                '& .css-koqloa-MuiPaper-root-MuiDialog-paper': {
+                '& .MuiDialog-paper': {
                     borderRadius: '20px',
                     paddingTop: '33px',
                     paddingBottom: '30px',
@@ -37,7 +37,6 @@ const ChooseProfessionPopup = (props) => {
             >
                 Bencil connects you with people just like you.
             </Typography>
-
             <Box sx={{ marginTop: '21px' }}>
                 {Topics.map((topic, i) => {
                     return (
@@ -56,17 +55,18 @@ const ChooseProfessionPopup = (props) => {
                     color: '#000',
                     mt: '35px',
                 }}
+                component="div"
             >
                 You already have an account?
                 <Typography
                     sx={{
                         fontSize: '12px',
                         fontWeight: '700',
-                        display: 'inline-block',
                         ml: '5px',
                         cursor: 'pointer',
                     }}
                     color="primary"
+                    display="inline"
                 >
                     Login here.
                 </Typography>
