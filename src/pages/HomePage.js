@@ -4,7 +4,7 @@ import Main from '../components/HomePageComponents/Main';
 import { Stack, Divider } from '@mui/material';
 const HomePage = () => {
     return (
-        <Stack direction="row">
+        <Stack direction="row" spacing="0px">
             <Sidebar />
             <Divider
                 orientation="vertical"

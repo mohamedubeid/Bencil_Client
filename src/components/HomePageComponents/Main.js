@@ -55,7 +55,32 @@ const Main = () => {
     ];
 
     return (
-        <Box flex={2.2} pt={{ xs: '20px', md: '45px' }}>
+        <Box
+            className="--simple scroll"
+            flex={1.7}
+            p="10px"
+            pt={{ xs: '25px', md: '45px' }}
+            sx={{
+                overflowY: 'scroll',
+                height: '90vh',
+                backgroundColor: theme.palette.background.light,
+                '&::-webkit-scrollbar': {
+                    width: '8px',
+                    height: '6px',
+                },
+                '&::-webkit-scrollbar-track': {
+                    borderRadius: '10px',
+                    background: 'rgba(0,0,0,0.1)',
+                },
+                '&::-webkit-scrollbar-thumb': {
+                    borderRadius: '10px',
+                    background: 'rgba(0,0,0,0.2)',
+                },
+                '&::-webkit-scrollbar-thumb:hover': {
+                    background: 'rgba(0,0,0,0.4)',
+                },
+            }}
+        >
             <Stack
                 direction="row"
                 spacing="8%"

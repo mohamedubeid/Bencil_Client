@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
-import { Divider, Container } from '@mui/material';
+import { Divider } from '@mui/material';
 import authContext from './auth-context';
 
 function App() {
@@ -19,22 +19,7 @@ function App() {
                     position: { xs: 'static', md: 'fixed' },
                 }}
             />
-            <Container
-                disableGutters
-                sx={{
-                    maxWidth: {
-                        xs: '95%',
-                        sm: '540px',
-                        md: '720px',
-                        lg: '960px',
-                        xl: '1140px',
-                    },
-                    m: 'auto',
-                    p: 0,
-                }}
-            >
-                <HomePage />
-            </Container>
+            <HomePage />
         </authContext.Provider>
     );
 }

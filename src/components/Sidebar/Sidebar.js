@@ -70,55 +70,91 @@ const Sidebar = () => {
         },
     ];
     return (
-        <Box flex={1} sx={{ display: { xs: 'none', md: 'block' } }}>
-            <Box sx={{ p: '40px 0px 34px 15px' }}>
-                <Stack direction="column" spacing="41px" display="inline-block">
+        <Box
+            flex={1}
+            sx={{
+                display: { xs: 'none', md: 'block' },
+                overflowY: 'scroll',
+                height: '90vh',
+                '&::-webkit-scrollbar': {
+                    width: '8px',
+                },
+                '&::-webkit-scrollbar-track': {
+                    borderRadius: '10px',
+                    background: 'rgba(0,0,0,0.1)',
+                },
+                '&::-webkit-scrollbar-thumb': {
+                    borderRadius: '10px',
+                    background: 'rgba(0,0,0,0.2)',
+                },
+                '&::-webkit-scrollbar-thumb:hover': {
+                    background: 'rgba(0,0,0,0.4)',
+                },
+            }}
+        >
+            <Box
+                sx={{
+                    maxWidth: {
+                        md: '250px',
+                        lg: '330px',
+                        xl: '350px',
+                    },
+                    marginLeft: 'auto',
+                }}
+            >
+                <Box sx={{ p: '40px 0px 34px 15px' }}>
                     <Stack
-                        direction="row"
-                        spacing={'5px'}
-                        color={
-                            page === 'related'
-                                ? theme.palette.primary.main
-                                : '#000'
-                        }
-                        sx={{
-                            cursor: 'pointer',
-                        }}
-                        onClick={() => setPage('related')}
+                        direction="column"
+                        spacing="41px"
+                        display="inline-block"
                     >
-                        <FavoriteIcon sx={{ fontSize: '32px' }} />
-                        <Typography variant="h6" sx={TypoStyle}>
-                            Related
-                        </Typography>
-                    </Stack>
-                    <Stack
-                        direction="row"
-                        spacing={'5px'}
-                        sx={{
-                            color:
-                                page === 'network'
+                        <Stack
+                            direction="row"
+                            spacing={'5px'}
+                            color={
+                                page === 'related'
                                     ? theme.palette.primary.main
-                                    : '#000',
-                            cursor: 'pointer',
-                        }}
-                        onClick={() => setPage('network')}
-                    >
-                        <PeopleAltIcon sx={{ fontSize: '32px' }} />
-                        <Typography variant="h6" sx={TypoStyle}>
-                            Network
-                        </Typography>
+                                    : '#000'
+                            }
+                            sx={{
+                                cursor: 'pointer',
+                            }}
+                            onClick={() => setPage('related')}
+                        >
+                            <FavoriteIcon sx={{ fontSize: '32px' }} />
+                            <Typography variant="h6" sx={TypoStyle}>
+                                Related
+                            </Typography>
+                        </Stack>
+                        <Stack
+                            direction="row"
+                            spacing={'5px'}
+                            sx={{
+                                color:
+                                    page === 'network'
+                                        ? theme.palette.primary.main
+                                        : '#000',
+                                cursor: 'pointer',
+                            }}
+                            onClick={() => setPage('network')}
+                        >
+                            <PeopleAltIcon sx={{ fontSize: '32px' }} />
+                            <Typography variant="h6" sx={TypoStyle}>
+                                Network
+                            </Typography>
+                        </Stack>
                     </Stack>
-                </Stack>
-            </Box>
-            <Divider sx={{ display: auth.status ? 'none' : 'block' }} />
-            <SidebarLoginComponent />
-            <Divider />
-            <CreatorSection creatorsList={creatorsList} />
-            <Divider />
-            <TopicsSections trendingTopics={trendingTopics} />
-            <Divider />
-            <Box sx={{ display: 'flex', justifyContent: 'start' }}>
-                <Footer />
+                </Box>
+                <Divider sx={{ display: auth.status ? 'none' : 'block' }} />
+                <SidebarLoginComponent />
+                <Divider />
+                <CreatorSection creatorsList={creatorsList} />
+                <Divider />
+                <TopicsSections trendingTopics={trendingTopics} />
+                <Divider />
+                <Box sx={{ display: 'flex', justifyContent: 'start' }}>
+                    <Footer />
+                </Box>
             </Box>
         </Box>
     );
