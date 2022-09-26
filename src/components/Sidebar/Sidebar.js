@@ -73,6 +73,7 @@ const Sidebar = () => {
         <Box
             flex={1}
             sx={{
+                backgroundColor: 'white',
                 display: { xs: 'none', md: 'block' },
                 pr: '25px',
                 pb: '50px',

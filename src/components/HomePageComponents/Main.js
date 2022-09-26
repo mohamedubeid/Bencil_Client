@@ -7,7 +7,7 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { theme } from '../../theme';
 import { TypoStyle } from '../../styledComponents/SidebarStyledComp';
 import ChooseProfessionPopup from './ChooseProfessionPopup';
-
+import { MainStyled } from '../../styledComponents/GlobalStyledComp';
 const Main = () => {
     const [page, setPage] = useState('related');
     const [open, setOpen] = useState(true);
@@ -56,30 +56,10 @@ const Main = () => {
 
     return (
         <Box
-            className="--simple scroll"
             flex={1.7}
             p="10px"
             pt={{ xs: '25px', md: '45px' }}
-            sx={{
-                overflowY: 'scroll',
-                height: '90vh',
-                backgroundColor: theme.palette.background.light,
-                '&::-webkit-scrollbar': {
-                    width: '8px',
-                    height: '6px',
-                },
-                '&::-webkit-scrollbar-track': {
-                    borderRadius: '10px',
-                    background: 'rgba(0,0,0,0.1)',
-                },
-                '&::-webkit-scrollbar-thumb': {
-                    borderRadius: '10px',
-                    background: 'rgba(0,0,0,0.2)',
-                },
-                '&::-webkit-scrollbar-thumb:hover': {
-                    background: 'rgba(0,0,0,0.4)',
-                },
-            }}
+            sx={MainStyled}
         >
             <Stack
                 direction="row"

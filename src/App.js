@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from './components/Navbar';
-import HomePage from './pages/HomePage';
+// import HomePage from './pages/HomePage';
+import Profile from './pages/Profile';
 import { Divider } from '@mui/material';
 import authContext from './auth-context';
 
@@ -19,7 +20,7 @@ function App() {
                     position: { xs: 'static', md: 'fixed' },
                 }}
             />
-            <HomePage />
+            <Profile />
         </authContext.Provider>
     );
 }
