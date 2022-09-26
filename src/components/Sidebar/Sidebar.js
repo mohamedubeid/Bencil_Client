@@ -74,6 +74,7 @@ const Sidebar = () => {
             flex={1}
             sx={{
                 display: { xs: 'none', md: 'block' },
+                pr: '25px',
                 pb: '50px',
                 overflowY: 'scroll',
                 height: '90vh',
