@@ -28,7 +28,6 @@ export const Search = styled(Box)(({ theme }) => ({
 }));
 
 export const UploadButton = styled(Button)(({ theme }) => ({
-    display: 'none',
     textTransform: 'none',
     borderRadius: '5px',
     padding: '11px 36px',
@@ -36,8 +35,10 @@ export const UploadButton = styled(Button)(({ theme }) => ({
     fontSize: '15px',
     lineHeight: '18.29px',
     border: '2px solid #E3E3E4',
-    [theme.breakpoints.up('md')]: {
-        display: 'block',
+    [theme.breakpoints.down('sm')]: {
+        padding: '10px 18px',
+        fontWeight: 600,
+        fontSize: '14px',
     },
     '&:hover': {
         border: `2px solid ${theme.palette.primary.main}`,

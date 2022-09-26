@@ -74,6 +74,7 @@ const Sidebar = () => {
             flex={1}
             sx={{
                 display: { xs: 'none', md: 'block' },
+                pb: '50px',
                 overflowY: 'scroll',
                 height: '90vh',
                 '&::-webkit-scrollbar': {
@@ -95,9 +96,9 @@ const Sidebar = () => {
             <Box
                 sx={{
                     maxWidth: {
-                        md: '250px',
-                        lg: '330px',
-                        xl: '350px',
+                        md: '200px',
+                        lg: '300px',
+                        xl: '330px',
                     },
                     marginLeft: 'auto',
                 }}

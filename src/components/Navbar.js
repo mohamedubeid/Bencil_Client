@@ -7,10 +7,8 @@ import {
     IconButton,
     Stack,
     Box,
-    Tooltip,
 } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import TelegramIcon from '@mui/icons-material/Telegram';
 import SearchIcon from '@mui/icons-material/Search';
 import {
     Search,
@@ -24,7 +22,6 @@ import {
 import authContext from '../auth-context.js';
 import { theme } from '../theme.js';
 import AccountMenu from './NavbarComponents/AccountMenu.js';
-import AddIcon from '@mui/icons-material/Add';
 
 const Navbar = () => {
     const auth = useContext(authContext);
@@ -82,29 +79,14 @@ const Navbar = () => {
                 <Stack
                     direction="row"
                     alignItems="center"
-                    spacing={{ xs: '-8px', md: '-5px', lg: '10px' }}
+                    spacing={{ xs: '0px', sm: '3px', md: '-5px', lg: '25px' }}
                 >
                     <Stack
                         direction="row"
-                        spacing={{ xs: '15px', sm: '20px' }}
+                        spacing={{ xs: '5px', sm: '20px' }}
                         alignItems="center"
                     >
                         <UploadButton variant="outlined">Upload</UploadButton>
-                        <IconButton
-                            size="small"
-                            sx={{
-                                display: { xs: 'block', md: 'none' },
-                            }}
-                            onClick={() => console.log('Upload Icon')}
-                        >
-                            <Tooltip title="Upload">
-                                <AddIcon
-                                    sx={{ pt: 1 }}
-                                    fontSize="large"
-                                    color="primary"
-                                />
-                            </Tooltip>
-                        </IconButton>
                         <Button
                             variant="contained"
                             sx={{
@@ -135,23 +117,6 @@ const Navbar = () => {
                                 <NotificationsIcon
                                     color="action"
                                     sx={BadgeStyle}
-                                />
-                            </Badge>
-                        </IconButton>
-                        <IconButton
-                            disableRipple
-                            size="small"
-                            onClick={() =>
-                                console.log('this is messages icon button')
-                            }
-                        >
-                            <Badge color="primary">
-                                <TelegramIcon
-                                    color="action"
-                                    sx={{
-                                        width: '26px',
-                                        height: '26px',
-                                    }}
                                 />
                             </Badge>
                         </IconButton>
