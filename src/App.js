@@ -23,8 +23,8 @@ function App() {
                     }}
                 />
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="profile" element={<Profile />} />
+                    <Route path="/home" element={<HomePage />} />
+                    <Route path="/profile" element={<Profile />} />
                 </Routes>
             </authContext.Provider>
         </BrowserRouter>
