@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import Profile from './pages/Profile';
+import Upload from './pages/Upload';
 import { Divider } from '@mui/material';
 import authContext from './auth-context';
 
@@ -20,7 +21,7 @@ function App() {
                     position: { xs: 'static', md: 'fixed' },
                 }}
             />
-            <Profile />
+            <Upload />
         </authContext.Provider>
     );
 }
