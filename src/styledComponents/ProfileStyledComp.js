@@ -1,3 +1,4 @@
+import { theme } from '../theme';
 export const ProfileButtonStyle = {
     fontWeight: '600',
     fontSize: '15px',
@@ -15,4 +16,24 @@ export const FollowStyle = {
     fontSize: '15px',
     color: '#00000080',
     cursor: 'pointer',
+};
+
+export const BottomNavigationStyle = {
+    '.MuiBottomNavigationAction-label': {
+        fontWeight: 600,
+        fontSize: '15px',
+        lineHeight: '18px',
+        color: '#000000',
+    },
+    '.Mui-selected': {
+        color: theme.palette.primary.main,
+        fontWeight: 600,
+        fontSize: '15px',
+        lineHeight: '18px',
+    },
+    paddingLeft: '120px',
+    paddingRight: '120px',
+    paddingTop: '0px',
+    marginTop: '9px',
+    borderBottom: '2px solid  rgba(0, 0, 0, 0.2)',
 };

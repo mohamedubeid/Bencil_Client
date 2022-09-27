@@ -3,27 +3,7 @@ import { Box, Grid, Typography } from '@mui/material';
 import { theme } from '../../theme';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-const BottomNavigationStyle = {
-    '.MuiBottomNavigationAction-label': {
-        fontWeight: 600,
-        fontSize: '15px',
-        lineHeight: '18px',
-        color: '#000000',
-    },
-    '.Mui-selected': {
-        color: theme.palette.primary.main,
-        fontWeight: 600,
-        fontSize: '15px',
-        lineHeight: '18px',
-    },
-    paddingLeft: '120px',
-    paddingRight: '120px',
-    paddingTop: '0px',
-    marginTop: '9px',
-    borderBottom: '2px solid  rgba(0, 0, 0, 0.2)',
-};
-
+import { BottomNavigationStyle } from '../../styledComponents/ProfileStyledComp';
 const ContentInsightfulBottomNavigation = () => {
     const [value, setValue] = React.useState(0);
     console.log(value, 'this is value');
@@ -72,14 +52,11 @@ const ContentInsightfulBottomNavigation = () => {
                     style={{ minHeight: '43vh', textAlign: 'center' }}
                 >
                     <Grid item xs="auto">
-                        <PersonOutlineIcon
-                            fontSize="medium"
-                            sx={{
-                                width: { xs: '150px', sm: '185px' },
-                                height: { xs: '150px', sm: '185px' },
-                                opacity: '0.5',
-                                fontWeight: '300',
-                            }}
+                        <img
+                            src="/images/user_1.png"
+                            alt="user"
+                            width="97px"
+                            height="97px"
                         />
                     </Grid>
                     <Grid item xs="auto">
