@@ -22,7 +22,6 @@ import {
 import authContext from '../auth-context.js';
 import { theme } from '../theme.js';
 import AccountMenu from './NavbarComponents/AccountMenu.js';
-import { Link } from 'react-router-dom';
 const Navbar = () => {
     const auth = useContext(authContext);
     const [anchorEl, setAnchorEl] = useState(null);
@@ -50,9 +49,7 @@ const Navbar = () => {
             color="background"
         >
             <StyledToolbar disableGutters>
-                {/* <Link to="/"> */}
                 <Logo src="images/logo.svg" alt="logo" />
-                {/* </Link> */}
 
                 <Box
                     sx={{
@@ -60,9 +57,7 @@ const Navbar = () => {
                         display: { xs: 'flex', md: 'none' },
                     }}
                 >
-                    {/* <Link to="/"> */}
                     <LogoImage src="images/logo_image.png" alt="logo_image" />
-                    {/* </Link> */}
                 </Box>
                 <Search
                     sx={{

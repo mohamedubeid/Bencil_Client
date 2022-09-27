@@ -9,7 +9,7 @@ const ProfileUserInfo = () => {
             <Stack
                 direction="row"
                 justifyContent="start"
-                alignItems="end"
+                alignItems={{ xs: 'center', sm: 'end' }}
                 spacing="10px"
             >
                 <Avatar
@@ -22,7 +22,7 @@ const ProfileUserInfo = () => {
                     alt="Mohamed Ubeid"
                     src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 />
-                <Stack sx={{ mt: 'auto' }} spacing="15px">
+                <Stack spacing="15px">
                     <Box>
                         <Typography
                             mb="5px"

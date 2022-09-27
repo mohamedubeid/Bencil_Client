@@ -53,7 +53,7 @@ const ContentInsightfulBottomNavigation = () => {
                 >
                     <Grid item xs="auto">
                         <img
-                            src="/images/user_1.png"
+                            src="images/user_1.png"
                             alt="user"
                             width="97px"
                             height="97px"
@@ -68,7 +68,7 @@ const ContentInsightfulBottomNavigation = () => {
                                 m: '7px',
                             }}
                         >
-                            Start sharing your knowledge in Bencil
+                            Start sharing your knowledge in Bencil.
                         </Typography>
                         <Typography
                             sx={{
@@ -78,7 +78,7 @@ const ContentInsightfulBottomNavigation = () => {
                                 m: '7px',
                             }}
                         >
-                            Bencil community is waiting for you
+                            Bencil community is waiting for you.
                         </Typography>
                     </Grid>
                 </Grid>

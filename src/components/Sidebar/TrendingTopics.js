@@ -5,7 +5,7 @@ import { TopicButton } from '../../styledComponents/SidebarStyledComp';
 const TrendingTopics = (props) => {
     const { topic, icon } = props;
     return (
-        <Box sx={{ display: 'inline-block', m: '7px 5px' }}>
+        <Box sx={{ display: 'block', m: '7px 5px' }}>
             <TopicButton>
                 <Stack
                     direction="row"

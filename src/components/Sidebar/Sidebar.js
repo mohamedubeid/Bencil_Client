@@ -99,7 +99,7 @@ const Sidebar = () => {
                     maxWidth: {
                         md: '200px',
                         lg: '300px',
-                        xl: '330px',
+                        xl: '350px',
                     },
                     marginLeft: 'auto',
                 }}
