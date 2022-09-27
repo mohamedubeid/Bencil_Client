@@ -50,9 +50,9 @@ const Navbar = () => {
             color="background"
         >
             <StyledToolbar disableGutters>
-                <Link to="/">
-                    <Logo src="images/logo.svg" alt="logo" />
-                </Link>
+                {/* <Link to="/"> */}
+                <Logo src="images/logo.svg" alt="logo" />
+                {/* </Link> */}
 
                 <Box
                     sx={{
@@ -60,12 +60,9 @@ const Navbar = () => {
                         display: { xs: 'flex', md: 'none' },
                     }}
                 >
-                    <Link to="/">
-                        <LogoImage
-                            src="images/logo_image.png"
-                            alt="logo_image"
-                        />
-                    </Link>
+                    {/* <Link to="/"> */}
+                    <LogoImage src="images/logo_image.png" alt="logo_image" />
+                    {/* </Link> */}
                 </Box>
                 <Search
                     sx={{
