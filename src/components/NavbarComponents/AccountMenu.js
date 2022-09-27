@@ -2,6 +2,7 @@ import React from 'react';
 import Menu from '@mui/material/Menu';
 import Divider from '@mui/material/Divider';
 import { MenuItemStyled } from '../../styledComponents/NavbarStyledComp.js.js';
+import { Link } from 'react-router-dom';
 
 const AccountMenu = ({ anchorEl, handleClose }) => {
     const open = Boolean(anchorEl);
@@ -39,7 +40,12 @@ const AccountMenu = ({ anchorEl, handleClose }) => {
             }}
         >
             <MenuItemStyled sx={{ paddingTop: '8px', paddingBottom: '8px' }}>
-                My Profile
+                <Link
+                    to="/profile"
+                    style={{ textDecoration: 'none', color: '#000' }}
+                >
+                    My Profile
+                </Link>
             </MenuItemStyled>
             <MenuItemStyled
                 sx={{ paddingTop: '8.32px', paddingBottom: '8.32px' }}

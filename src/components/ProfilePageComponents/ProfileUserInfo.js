@@ -38,10 +38,40 @@ const ProfileUserInfo = () => {
                             @em1200
                         </Typography>
                     </Box>
-                    <Button variant="outlined" sx={ProfileButtonStyle}>
+                    <Button
+                        variant="outlined"
+                        sx={{
+                            ...ProfileButtonStyle,
+                            display: { xs: 'none', sm: 'block' },
+                        }}
+                    >
                         Edit Profile
                     </Button>
                 </Stack>
+                <Button
+                    variant="outlined"
+                    sx={{
+                        ...ProfileButtonStyle,
+                        display: { xs: 'none', sm: 'block' },
+                    }}
+                >
+                    Share Profile
+                </Button>
+            </Stack>
+            <Stack
+                direction="row"
+                sx={{
+                    display: { xs: 'block', sm: 'none' },
+                    mt: '42px',
+                    textAlign: 'center',
+                }}
+                spacing="16px"
+                justifyContent="center"
+                alignItems="center"
+            >
+                <Button variant="outlined" sx={ProfileButtonStyle}>
+                    Edit Profile
+                </Button>
                 <Button variant="outlined" sx={ProfileButtonStyle}>
                     Share Profile
                 </Button>
