@@ -61,7 +61,7 @@ const Navbar = () => {
                 </Box>
                 <Search
                     sx={{
-                        marginRight: { xs: 'auto', md: '-70px', lg: '-40px' },
+                        marginRight: { xs: 'auto', md: '0px', lg: '30px' },
                         width: { xs: '35%', md: '29%' },
                     }}
                 >

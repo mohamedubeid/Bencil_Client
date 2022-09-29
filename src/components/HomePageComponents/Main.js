@@ -42,6 +42,17 @@ const Main = () => {
             topic: 'Google Ads',
             image: 'images/assets/test_v2.png',
         },
+        {
+            userInfo: {
+                name: 'Mohamed Ubeid',
+                userName: '@mubeid1999',
+                avatar: 'https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            },
+            id: 1,
+            text: ' is traditional marketing still effective in 2022?',
+            topic: 'Marketing Channels',
+            image: 'images/assets/test_v1.png',
+        },
     ];
 
     const Topics = [
@@ -56,65 +67,83 @@ const Main = () => {
 
     return (
         <Box
-            flex={1.7}
-            p="10px"
-            pt={{ xs: '25px', md: '45px' }}
-            sx={MainStyled}
+            flex="auto"
+            sx={{
+                ...MainStyled,
+                backgroundColor: '#e3e3e4',
+            }}
         >
-            <Stack
-                direction="row"
-                spacing="8%"
-                justifyContent="center"
-                mb={5}
-                display={{ xs: 'flex', md: 'none' }}
+            <Box
+                p="10px"
+                pt={{ xs: '25px', md: '45px' }}
+                sx={{
+                    width: {
+                        xs: '95%',
+                        sm: '540px',
+                        md: '512px',
+                        lg: '682px',
+                        xl: '810px',
+                    },
+                }}
+                margin={{ xs: 'auto', md: '0' }}
             >
                 <Stack
                     direction="row"
-                    spacing={'5px'}
-                    sx={{
-                        color:
-                            page === 'network'
+                    spacing="8%"
+                    justifyContent="center"
+                    mb={5}
+                    display={{ xs: 'flex', md: 'none' }}
+                >
+                    <Stack
+                        direction="row"
+                        spacing={'5px'}
+                        sx={{
+                            color:
+                                page === 'network'
+                                    ? theme.palette.primary.main
+                                    : '#000',
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => setPage('network')}
+                    >
+                        <PeopleAltIcon sx={{ fontSize: '30px' }} />
+                        <Typography variant="h6" sx={TypoStyle}>
+                            Network
+                        </Typography>
+                    </Stack>
+                    <Stack
+                        direction="row"
+                        spacing={'5px'}
+                        color={
+                            page === 'related'
                                 ? theme.palette.primary.main
-                                : '#000',
-                        cursor: 'pointer',
-                    }}
-                    onClick={() => setPage('network')}
-                >
-                    <PeopleAltIcon sx={{ fontSize: '30px' }} />
-                    <Typography variant="h6" sx={TypoStyle}>
-                        Network
-                    </Typography>
+                                : '#000'
+                        }
+                        sx={{
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => setPage('related')}
+                    >
+                        <FavoriteIcon sx={{ fontSize: '30px' }} />
+                        <Typography variant="h6" sx={TypoStyle}>
+                            Related
+                        </Typography>
+                    </Stack>
                 </Stack>
-                <Stack
-                    direction="row"
-                    spacing={'5px'}
-                    color={
-                        page === 'related' ? theme.palette.primary.main : '#000'
-                    }
-                    sx={{
-                        cursor: 'pointer',
-                    }}
-                    onClick={() => setPage('related')}
-                >
-                    <FavoriteIcon sx={{ fontSize: '30px' }} />
-                    <Typography variant="h6" sx={TypoStyle}>
-                        Related
-                    </Typography>
-                </Stack>
-            </Stack>
-            <Box>
-                {ListOfPosts.map((post) => {
-                    return <PostComponent postData={post} key={post.id} />;
-                })}
+                <Box>
+                    {ListOfPosts.map((post) => {
+                        return <PostComponent postData={post} key={post.id} />;
+                    })}
+                </Box>
+                <Box p={2} display={{ xs: 'block', md: 'none' }}>
+                    <Footer />
+                </Box>
+                <ChooseProfessionPopup
+                    open={open}
+                    onClose={handleClose}
+                    Topics={Topics}
+                />
             </Box>
-            <Box p={2} display={{ xs: 'block', md: 'none' }}>
-                <Footer />
-            </Box>
-            <ChooseProfessionPopup
-                open={open}
-                onClose={handleClose}
-                Topics={Topics}
-            />
         </Box>
     );
 };

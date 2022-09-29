@@ -9,7 +9,7 @@ import TopicsSections from './TopicsSections';
 import Footer from '../Footer';
 import SidebarLoginComponent from './LoginComponent';
 import authContext from '../../auth-context.js';
-
+import { MainStyled } from '../../styledComponents/GlobalStyledComp';
 const Sidebar = () => {
     const [page, setPage] = useState('related');
     const auth = useContext(authContext);
@@ -71,92 +71,67 @@ const Sidebar = () => {
     ];
     return (
         <Box
-            flex={1}
             sx={{
-                backgroundColor: 'white',
+                ...MainStyled,
                 display: { xs: 'none', md: 'block' },
                 pb: '50px',
-                overflowY: 'scroll',
-                height: '90vh',
-                '&::-webkit-scrollbar': {
-                    width: '8px',
-                },
-                '&::-webkit-scrollbar-track': {
-                    borderRadius: '10px',
-                    background: 'rgba(0,0,0,0.1)',
-                },
-                '&::-webkit-scrollbar-thumb': {
-                    borderRadius: '10px',
-                    background: 'rgba(0,0,0,0.2)',
-                },
-                '&::-webkit-scrollbar-thumb:hover': {
-                    background: 'rgba(0,0,0,0.4)',
+                width: {
+                    xs: '95%',
+                    sm: '540px',
+                    md: '208px',
+                    lg: '278px',
+                    xl: '330px',
                 },
             }}
         >
-            <Box
-                sx={{
-                    maxWidth: {
-                        md: '200px',
-                        lg: '300px',
-                        xl: '350px',
-                    },
-                    marginLeft: 'auto',
-                }}
-            >
-                <Box sx={{ p: '40px 0px 34px 15px' }}>
+            <Box sx={{ p: '40px 0px 34px 15px' }}>
+                <Stack direction="column" spacing="41px" display="inline-block">
                     <Stack
-                        direction="column"
-                        spacing="41px"
-                        display="inline-block"
+                        direction="row"
+                        spacing={'5px'}
+                        color={
+                            page === 'related'
+                                ? theme.palette.primary.main
+                                : '#000'
+                        }
+                        sx={{
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => setPage('related')}
                     >
-                        <Stack
-                            direction="row"
-                            spacing={'5px'}
-                            color={
-                                page === 'related'
-                                    ? theme.palette.primary.main
-                                    : '#000'
-                            }
-                            sx={{
-                                cursor: 'pointer',
-                            }}
-                            onClick={() => setPage('related')}
-                        >
-                            <FavoriteIcon sx={{ fontSize: '32px' }} />
-                            <Typography variant="h6" sx={TypoStyle}>
-                                Related
-                            </Typography>
-                        </Stack>
-                        <Stack
-                            direction="row"
-                            spacing={'5px'}
-                            sx={{
-                                color:
-                                    page === 'network'
-                                        ? theme.palette.primary.main
-                                        : '#000',
-                                cursor: 'pointer',
-                            }}
-                            onClick={() => setPage('network')}
-                        >
-                            <PeopleAltIcon sx={{ fontSize: '32px' }} />
-                            <Typography variant="h6" sx={TypoStyle}>
-                                Network
-                            </Typography>
-                        </Stack>
+                        <FavoriteIcon sx={{ fontSize: '32px' }} />
+                        <Typography variant="h6" sx={TypoStyle}>
+                            Related
+                        </Typography>
                     </Stack>
-                </Box>
-                <Divider sx={{ display: auth.status ? 'none' : 'block' }} />
-                <SidebarLoginComponent />
-                <Divider />
-                <CreatorSection creatorsList={creatorsList} />
-                <Divider />
-                <TopicsSections trendingTopics={trendingTopics} />
-                <Divider />
-                <Box sx={{ display: 'flex', justifyContent: 'start' }}>
-                    <Footer />
-                </Box>
+                    <Stack
+                        direction="row"
+                        spacing={'5px'}
+                        sx={{
+                            color:
+                                page === 'network'
+                                    ? theme.palette.primary.main
+                                    : '#000',
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => setPage('network')}
+                    >
+                        <PeopleAltIcon sx={{ fontSize: '32px' }} />
+                        <Typography variant="h6" sx={TypoStyle}>
+                            Network
+                        </Typography>
+                    </Stack>
+                </Stack>
+            </Box>
+            <Divider sx={{ display: auth.status ? 'none' : 'block' }} />
+            <SidebarLoginComponent />
+            <Divider />
+            <CreatorSection creatorsList={creatorsList} />
+            <Divider />
+            <TopicsSections trendingTopics={trendingTopics} />
+            <Divider />
+            <Box sx={{ display: 'flex', justifyContent: 'start' }}>
+                <Footer />
             </Box>
         </Box>
     );
