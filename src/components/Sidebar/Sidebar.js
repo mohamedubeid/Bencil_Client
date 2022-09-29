@@ -9,7 +9,7 @@ import TopicsSections from './TopicsSections';
 import Footer from '../Footer';
 import SidebarLoginComponent from './LoginComponent';
 import authContext from '../../auth-context.js';
-import { MainStyled } from '../../styledComponents/GlobalStyledComp';
+import { OuterContainer } from '../../styledComponents/GlobalStyledComp';
 const Sidebar = () => {
     const [page, setPage] = useState('related');
     const auth = useContext(authContext);
@@ -72,7 +72,7 @@ const Sidebar = () => {
     return (
         <Box
             sx={{
-                ...MainStyled,
+                ...OuterContainer,
                 display: { xs: 'none', md: 'block' },
                 pb: '50px',
                 width: {

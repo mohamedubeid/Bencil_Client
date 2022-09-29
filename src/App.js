@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import Profile from './pages/Profile';
 import Upload from './pages/Upload';
+import Feedback from './pages/Feedback';
 import { Divider } from '@mui/material';
 import authContext from './auth-context';
 
@@ -21,7 +22,7 @@ function App() {
                     position: { xs: 'static', md: 'fixed' },
                 }}
             />
-            <Upload />
+            <Feedback />
         </authContext.Provider>
     );
 }

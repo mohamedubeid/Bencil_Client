@@ -7,7 +7,10 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { theme } from '../../theme';
 import { TypoStyle } from '../../styledComponents/SidebarStyledComp';
 import ChooseProfessionPopup from './ChooseProfessionPopup';
-import { MainStyled } from '../../styledComponents/GlobalStyledComp';
+import {
+    OuterContainer,
+    InnerContainer,
+} from '../../styledComponents/GlobalStyledComp';
 const Main = () => {
     const [page, setPage] = useState('related');
     const [open, setOpen] = useState(true);
@@ -69,24 +72,11 @@ const Main = () => {
         <Box
             flex="auto"
             sx={{
-                ...MainStyled,
+                ...OuterContainer,
                 backgroundColor: theme.palette.background.light,
             }}
         >
-            <Box
-                p="10px"
-                pt={{ xs: '25px', md: '45px' }}
-                sx={{
-                    width: {
-                        xs: '95%',
-                        sm: '540px',
-                        md: '512px',
-                        lg: '682px',
-                        xl: '810px',
-                    },
-                }}
-                margin={{ xs: 'auto', md: '0' }}
-            >
+            <Box p="10px" pt={{ xs: '25px', md: '45px' }} sx={InnerContainer}>
                 <Stack
                     direction="row"
                     spacing="8%"

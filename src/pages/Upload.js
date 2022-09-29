@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Typography, Stack, Button, Box, TextField } from '@mui/material';
-import { MainStyled } from '../styledComponents/GlobalStyledComp';
+import { OuterContainer } from '../styledComponents/GlobalStyledComp';
 const InputLabel = {
     fontWeight: 600,
     fontSize: '15px',
@@ -28,7 +28,7 @@ const Upload = () => {
     };
     console.log('imageimage', image);
     return (
-        <Box sx={MainStyled}>
+        <Box sx={OuterContainer}>
             <Box
                 sx={{
                     m: { xs: '0 auto', md: '36px auto' },
