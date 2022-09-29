@@ -21,7 +21,7 @@ function App() {
                     position: { xs: 'static', md: 'fixed' },
                 }}
             />
-            <HomePage />
+            <Upload />
         </authContext.Provider>
     );
 }

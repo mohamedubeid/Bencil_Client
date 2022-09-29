@@ -9,9 +9,13 @@ const PostUserInfo = (props) => {
         <Stack
             direction="row"
             alignItems="center"
-            spacing={{ xs: '13%', lg: '40px', xl: '13%' }}
+            spacing={{ xs: '4%', lg: '40px', xl: '13%' }}
         >
-            <Stack direction="row" alignItems="center" spacing={1.5}>
+            <Stack
+                direction="row"
+                alignItems="center"
+                spacing={{ xs: 1, sm: 1.5 }}
+            >
                 <Avatar
                     sx={{
                         width: { xs: '50px', md: '54.5px' },

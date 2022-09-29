@@ -47,7 +47,6 @@ const PostComponent = (props) => {
                             paddingBottom: '7px',
                             fontWeight: '600',
                         }}
-                        noWrap={true}
                     >
                         {text}
                     </Typography>
@@ -64,7 +63,6 @@ const PostComponent = (props) => {
                                 ...PostFont,
                                 fontWeight: '400',
                             }}
-                            noWrap={true}
                         >
                             {topic}
                         </Typography>

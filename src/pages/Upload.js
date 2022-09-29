@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Typography, Stack, Button, Box, TextField } from '@mui/material';
-
+import { MainStyled } from '../styledComponents/GlobalStyledComp';
 const InputLabel = {
     fontWeight: 600,
     fontSize: '15px',
@@ -28,112 +28,120 @@ const Upload = () => {
     };
     console.log('imageimage', image);
     return (
-        <Box
-            sx={{
-                m: '36px auto',
-                maxWidth: {
-                    xs: '95%',
-                    sm: '540px',
-                    md: '720px',
-                    lg: '960px',
-                    xl: '1140px',
-                },
-                border: ' 1px solid #ebebeb',
-                borderRadius: '10px',
-                padding: '51px 55px',
-            }}
-        >
-            <Typography sx={{ fontWeight: 700, fontSize: '20px' }}>
-                Upload Your Video
-            </Typography>
-            <Typography
+        <Box sx={MainStyled}>
+            <Box
                 sx={{
-                    fontWeight: 500,
-                    fontSize: '15px',
-                    color: '#B0B0B4',
-                    mt: '12px',
+                    m: { xs: '0 auto', md: '36px auto' },
+                    maxWidth: {
+                        xs: '100%',
+                        sm: '540px',
+                        md: '720px',
+                        lg: '960px',
+                        xl: '1140px',
+                    },
+                    border: ' 1px solid #ebebeb',
+                    borderRadius: '10px',
+                    padding: '51px 55px',
                 }}
             >
-                Share your video with Bencil community
-            </Typography>
-            <Stack direction="row" marginTop="67px" spacing="21px">
-                <Box
-                    flex="1"
+                <Typography sx={{ fontWeight: 700, fontSize: '20px' }}>
+                    Upload Your Video
+                </Typography>
+                <Typography
                     sx={{
-                        border: ' 1px dashed #B0B0B4',
-                        borderRadius: ' 15px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        textAlign: 'center',
-                        padding: '22px',
+                        fontWeight: 500,
+                        fontSize: '15px',
+                        color: '#B0B0B4',
+                        mt: '12px',
                     }}
                 >
-                    <Box>
-                        <Button variant="contained">Select Video</Button>
-                        <Typography
-                            sx={{
-                                fontWeight: 400,
-                                fontSize: '15px',
-                                mt: '32px',
-                            }}
-                        >
-                            Only vidoes shot with Mobile with 9:16 Aspect ratio
-                        </Typography>
-                    </Box>
-                </Box>
-                <Box flex="2.7">
-                    <Typography sx={InputLabel}>Title</Typography>
-                    <TextField
-                        fullWidth
-                        id="outlined-basic"
-                        variant="outlined"
-                        sx={TextFieldStyled}
-                    />
-                    <Typography sx={InputLabel}>Thumbnail</Typography>
-                    {/* <TextField
-                        fullWidth
-                        id="outlined-basic"
-                        variant="outlined"
-                        sx={TextFieldStyled}
-                        type="image"
-                    /> */}
-                    {/* <input type="image" /> */}
-                    <Button
-                        variant="outlined"
-                        component="label"
+                    Share your video with Bencil community
+                </Typography>
+                <Stack
+                    direction={{ xs: 'column', md: 'row' }}
+                    marginTop="67px"
+                    spacing={{ xs: '40px', md: '21px' }}
+                >
+                    <Box
+                        flex="1"
                         sx={{
-                            p: '13px 9px',
-                            mb: '17px',
-                            fontWeight: 700,
-                            fontSize: '15px',
+                            border: ' 1px dashed #B0B0B4',
+                            borderRadius: ' 15px',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            textAlign: 'center',
+                            padding: '22px',
                         }}
                     >
-                        select photo
-                        <input
-                            hidden
-                            accept="image/*"
-                            multiple
-                            type="file"
-                            onChange={handleCapture}
+                        <Box>
+                            <Button variant="contained" component="label">
+                                Select Video
+                                <input
+                                    hidden
+                                    accept="video/*"
+                                    multiple
+                                    type="file"
+                                    // onChange={handleCapture}
+                                />
+                            </Button>
+                            <Typography
+                                sx={{
+                                    fontWeight: 400,
+                                    fontSize: '15px',
+                                    mt: '32px',
+                                }}
+                            >
+                                Only vidoes shot with Mobile with 9:16 Aspect
+                                ratio
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Box flex="2.7">
+                        <Typography sx={InputLabel}>Title</Typography>
+                        <TextField
+                            fullWidth
+                            id="outlined-basic"
+                            variant="outlined"
+                            sx={TextFieldStyled}
                         />
-                    </Button>
-                    <Typography sx={InputLabel}>Topic</Typography>
-                    <TextField
-                        fullWidth
-                        id="outlined-basic"
-                        variant="outlined"
-                        sx={TextFieldStyled}
-                    />
-                    <Typography sx={InputLabel}>Tag</Typography>
-                    <TextField
-                        fullWidth
-                        id="outlined-basic"
-                        variant="outlined"
-                        sx={TextFieldStyled}
-                    />
-                </Box>
-            </Stack>
+                        <Typography sx={InputLabel}>Thumbnail</Typography>
+                        <Button
+                            variant="outlined"
+                            component="label"
+                            sx={{
+                                p: '13px 9px',
+                                mb: '17px',
+                                fontWeight: 700,
+                                fontSize: '15px',
+                            }}
+                        >
+                            select photo
+                            <input
+                                hidden
+                                accept="image/*"
+                                multiple
+                                type="file"
+                                onChange={handleCapture}
+                            />
+                        </Button>
+                        <Typography sx={InputLabel}>Topic</Typography>
+                        <TextField
+                            fullWidth
+                            id="outlined-basic"
+                            variant="outlined"
+                            sx={TextFieldStyled}
+                        />
+                        <Typography sx={InputLabel}>Tag</Typography>
+                        <TextField
+                            fullWidth
+                            id="outlined-basic"
+                            variant="outlined"
+                            sx={TextFieldStyled}
+                        />
+                    </Box>
+                </Stack>
+            </Box>
         </Box>
     );
 };

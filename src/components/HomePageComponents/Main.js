@@ -70,7 +70,7 @@ const Main = () => {
             flex="auto"
             sx={{
                 ...MainStyled,
-                backgroundColor: '#e3e3e4',
+                backgroundColor: theme.palette.background.light,
             }}
         >
             <Box

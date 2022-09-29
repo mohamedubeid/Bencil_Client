@@ -6,9 +6,23 @@ import ProfileUserInfo from './ProfileUserInfo';
 
 const Main = () => {
     return (
-        <Box flex={1.7} p="23px 10px 10px 30px" sx={MainStyled}>
-            <ProfileUserInfo />
-            <ContentInsightfulBottomNavigation />
+        <Box flex="auto" sx={MainStyled}>
+            <Box
+                p={{ xs: '26px 10px', md: '26px 10px 10px 55px' }}
+                sx={{
+                    width: {
+                        xs: '95%',
+                        sm: '540px',
+                        md: '512px',
+                        lg: '682px',
+                        xl: '810px',
+                    },
+                }}
+                margin={{ xs: 'auto', md: '0' }}
+            >
+                <ProfileUserInfo />
+                <ContentInsightfulBottomNavigation />
+            </Box>
         </Box>
     );
 };

@@ -1,5 +1,5 @@
 export const MainStyled = {
-    overflowY: 'scroll',
+    overflowY: 'auto',
     height: '90vh',
     backgroundColor: 'white',
     '&::-webkit-scrollbar': {
