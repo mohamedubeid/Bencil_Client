@@ -22,7 +22,7 @@ function App() {
                     position: { xs: 'static', md: 'fixed' },
                 }}
             />
-            <Feedback />
+            <HomePage />
         </authContext.Provider>
     );
 }
