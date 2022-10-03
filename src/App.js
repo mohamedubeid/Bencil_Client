@@ -6,7 +6,7 @@ import Upload from './pages/Upload';
 import Feedback from './pages/Feedback';
 import { Divider } from '@mui/material';
 import authContext from './auth-context';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
     const [isLoggedIn, setLoggedIn] = useState(false);
     const logIn = () => {
@@ -15,16 +15,49 @@ function App() {
 
     return (
         <authContext.Provider value={{ status: isLoggedIn, login: logIn }}>
-            <Navbar />
+            {/* <Navbar />
             <Divider
                 sx={{
                     width: '100%',
                     position: { xs: 'static', md: 'fixed' },
                 }}
             />
-            <HomePage />
+            <HomePage /> */}
+            <BrowserRouter>
+                <Navbar />
+                <Divider
+                    sx={{
+                        width: '100%',
+                        position: { xs: 'static', md: 'fixed' },
+                    }}
+                />
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/feedback" element={<Feedback />} />
+                    <Route path="/upload" element={<Upload />} />
+                </Routes>
+            </BrowserRouter>
         </authContext.Provider>
     );
 }
 
 export default App;
+
+/*
+
+ <BrowserRouter>
+             <Navbar />
+<Divider
+                sx={{
+                    width: '100%',
+                    position: { xs: 'static', md: 'fixed' },
+                }}
+            />
+    <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/profile" element={<Profile />} />
+    </Routes>
+  </BrowserRouter>,
+
+*/
