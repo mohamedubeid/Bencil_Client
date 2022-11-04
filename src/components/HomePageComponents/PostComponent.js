@@ -69,7 +69,10 @@ const PostComponent = (props) => {
                     </Stack>
                 </Box>
                 <Box position="relative">
-                    <Image src={image} />
+                    <video width='285px' height='507px' preload='auto'  controls>
+                        <source src={image} type="video/mp4"  />
+                        Your browser does not support HTML5 video.
+                    </video>
                     <Stack
                         position="absolute"
                         direction="column"

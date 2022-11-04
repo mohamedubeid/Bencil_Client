@@ -32,7 +32,7 @@ const Main = () => {
             id: 1,
             text: ' is traditional marketing still effective in 2022?',
             topic: 'Marketing Channels',
-            image: 'images/assets/test_v1.png',
+            image: '/videos/fake-video1.mp4',
         },
         {
             userInfo: {
@@ -43,7 +43,7 @@ const Main = () => {
             id: 2,
             text: ' How to get the best CPC in google ads!',
             topic: 'Google Ads',
-            image: 'images/assets/test_v2.png',
+            image: '/videos/fake-video2.mp4',
         },
         {
             userInfo: {
@@ -54,7 +54,7 @@ const Main = () => {
             id: 1,
             text: ' is traditional marketing still effective in 2022?',
             topic: 'Marketing Channels',
-            image: 'images/assets/test_v1.png',
+            image: '/videos/fake-video3.mp4',
         },
     ];
 

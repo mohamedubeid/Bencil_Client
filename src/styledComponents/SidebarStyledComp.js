@@ -1,7 +1,7 @@
 import { styled, Typography, Button } from '@mui/material';
 
 export const TypoStyle = {
-    fontSIze: '20px',
+    fontSIze: '22px',
     fontWeight: '700',
     lineHeight: '35px',
 };
