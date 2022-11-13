@@ -15,14 +15,6 @@ function App() {
 
     return (
         <authContext.Provider value={{ status: isLoggedIn, login: logIn }}>
-            {/* <Navbar />
-            <Divider
-                sx={{
-                    width: '100%',
-                    position: { xs: 'static', md: 'fixed' },
-                }}
-            />
-            <HomePage /> */}
             <BrowserRouter>
                 <Navbar />
                 <Divider
@@ -43,21 +35,3 @@ function App() {
 }
 
 export default App;
-
-/*
-
- <BrowserRouter>
-             <Navbar />
-<Divider
-                sx={{
-                    width: '100%',
-                    position: { xs: 'static', md: 'fixed' },
-                }}
-            />
-    <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/profile" element={<Profile />} />
-    </Routes>
-  </BrowserRouter>,
-
-*/
