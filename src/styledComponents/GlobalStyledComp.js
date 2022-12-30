@@ -1,7 +1,4 @@
-export const OuterContainer = {
-  overflowY: "auto",
-  height: "90vh",
-  backgroundColor: "white",
+export const scrollbarStyles = {
   "&::-webkit-scrollbar": {
     width: "8px",
     height: "6px",
@@ -17,6 +14,12 @@ export const OuterContainer = {
   "&::-webkit-scrollbar-thumb:hover": {
     background: "rgba(0,0,0,0.4)",
   },
+};
+export const OuterContainer = {
+  ...scrollbarStyles,
+  overflowY: "auto",
+  height: "90vh",
+  backgroundColor: "white",
 };
 
 export const InnerContainer = {

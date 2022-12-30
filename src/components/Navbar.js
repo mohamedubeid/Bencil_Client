@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   //login pop up page
-  const [openPopup, setOpenPopup] = React.useState(false);
+  const [openPopup, setOpenPopup] = useState(false);
 
   const handleClickOpenLoginPopup = () => {
     setOpenPopup(true);
@@ -166,6 +166,7 @@ const Navbar = () => {
       <SignupPopup
         open={openSignupPopup}
         handleClose={handleCloseSignupPopup}
+        handleClickOpenLoginPopup={handleClickOpenLoginPopup}
       />
     </AppBar>
   );

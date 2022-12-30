@@ -14,6 +14,7 @@ import {
   InputFieldStyle,
   StyledInputBase,
 } from "../styledComponents/LogSignPopupStyledComp";
+import { scrollbarStyles } from "../styledComponents/GlobalStyledComp";
 
 const LoginPopup = ({
   open,
@@ -26,18 +27,20 @@ const LoginPopup = ({
       open={open}
       onClose={handleClose}
       sx={{
+        overflow: "auto",
         "& .MuiDialog-paper": {
           width: "500px",
-          minHeight: "700px",
           borderRadius: "5px",
-          p: "55px 51px 16px 51px",
+          p: "25px 51px 16px 51px",
+          overflow: "auto",
+          display: "block",
+          ...scrollbarStyles,
         },
       }}
     >
       <DialogTitle
         sx={{
           textAlign: "center",
-          pb: "50px",
           fontWeight: "700",
           fontSize: "30px",
         }}
@@ -67,7 +70,7 @@ const LoginPopup = ({
         display="flex"
         flexDirection="row"
         alignItems="center"
-        sx={{ mt: "35px" }}
+        sx={{ mt: "20px" }}
       >
         <Checkbox defaultChecked sx={{ color: "rgba(0, 0, 0, 0.2)" }} />
         <Typography
@@ -82,6 +85,7 @@ const LoginPopup = ({
       </Box>
       <Button
         variant="contained"
+        fullWidth
         sx={primaryButton}
         onClick={() => {
           login();
@@ -91,6 +95,7 @@ const LoginPopup = ({
         Let’s Go
       </Button>
       <Button
+        fullWidth
         variant="outlined"
         disableFocusRipple
         sx={secondaryButton}
@@ -99,6 +104,7 @@ const LoginPopup = ({
         Continue with Linkedin
       </Button>
       <Button
+        fullWidth
         variant="outlined"
         disableElevation
         sx={secondaryButton}
@@ -106,14 +112,24 @@ const LoginPopup = ({
       >
         Continue with Google
       </Button>
-      <Typography mt="70px" fontSize="14px" fontWeight="400">
-        Don’t have an account?
+      <Box sx={{ textAlign: "center" }}>
         <Typography
-          component="span"
+          mt="35px"
+          fontSize="14px"
+          fontWeight="400"
+          display="inline-block"
+        >
+          Don’t have an account?
+        </Typography>
+        <Typography
+          fontSize="14px"
+          fontWeight="400"
           color="primary"
           sx={{
             cursor: "pointer",
+            display: "inline-block",
             "&: hover": { textDecoration: "underLine" },
+            ml: "3px",
           }}
           onClick={() => {
             handleClose();
@@ -122,7 +138,7 @@ const LoginPopup = ({
         >
           Sign up
         </Typography>
-      </Typography>
+      </Box>
     </Dialog>
   );
 };
