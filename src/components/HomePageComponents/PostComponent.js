@@ -1,19 +1,19 @@
-import { Box, Typography, Stack, Divider } from '@mui/material';
-import React, { useState } from 'react';
-import PostUserInfo from './PostUserInfo';
+import { Box, Typography, Stack, Divider } from "@mui/material";
+import React, { useState } from "react";
+import PostUserInfo from "./PostUserInfo";
 import {
     PostFont,
     Image,
     ReactionsButton,
-} from '../../styledComponents/HomePageStyledComp';
+} from "../../styledComponents/HomePageStyledComp";
 
 const ReactionsNumberStyle = {
-    color: '#000',
+    color: "#000",
     fontWeight: 400,
-    fontSize: '10px',
-    lineHeight: '12.19px',
-    textAlign: 'center',
-    mt: '3.5px',
+    fontSize: "10px",
+    lineHeight: "12.19px",
+    textAlign: "center",
+    mt: "3.5px",
 };
 
 const PostComponent = (props) => {
@@ -23,9 +23,9 @@ const PostComponent = (props) => {
     return (
         <Box
             sx={{
-                display: 'block',
-                maxWidth: '402px',
-                margin: { xs: 'auto', lg: '0 30% 0 15%' },
+                display: "block",
+                maxWidth: "402px",
+                margin: { xs: "auto", lg: "0 30% 0 15%" },
             }}
         >
             <PostUserInfo
@@ -36,16 +36,16 @@ const PostComponent = (props) => {
             <Box
                 margin="10px 0px 10px auto"
                 sx={{
-                    display: 'block',
-                    maxWidth: '335px',
+                    display: "block",
+                    maxWidth: "335px",
                 }}
             >
                 <Box mb="20px">
                     <Typography
                         sx={{
                             ...PostFont,
-                            paddingBottom: '7px',
-                            fontWeight: '600',
+                            paddingBottom: "7px",
+                            fontWeight: "600",
                         }}
                     >
                         {text}
@@ -61,7 +61,7 @@ const PostComponent = (props) => {
                             variant="h6"
                             sx={{
                                 ...PostFont,
-                                fontWeight: '400',
+                                fontWeight: "400",
                             }}
                         >
                             {topic}
@@ -69,16 +69,16 @@ const PostComponent = (props) => {
                     </Stack>
                 </Box>
                 <Box position="relative">
-                    <video width='285px' height='507px' preload='auto'  controls>
-                        <source src={image} type="video/mp4"  />
+                    <video width="285px" height="507px" preload="auto" controls>
+                        <source src={image} type="video/mp4" />
                         Your browser does not support HTML5 video.
                     </video>
                     <Stack
                         position="absolute"
                         direction="column"
                         sx={{
-                            right: '5px',
-                            top: '37%',
+                            right: "5px",
+                            top: "37%",
                         }}
                         spacing="30px"
                     >
@@ -108,7 +108,7 @@ const PostComponent = (props) => {
                         </Box>
                         <Box>
                             <ReactionsButton
-                                onClick={() => console.log('comment')}
+                                onClick={() => console.log("comment")}
                             >
                                 <img
                                     src="images/comments.svg"
@@ -123,7 +123,7 @@ const PostComponent = (props) => {
                         </Box>
                         <Box>
                             <ReactionsButton
-                                onClick={() => console.log('share')}
+                                onClick={() => console.log("share")}
                             >
                                 <img
                                     src="images/share.svg"
@@ -163,9 +163,9 @@ const PostComponent = (props) => {
             </Box>
             <Divider
                 sx={{
-                    m: '50px auto',
-                    width: '100%',
-                    color: 'rgba(0, 0, 0, 0.2)',
+                    m: "50px auto",
+                    width: "100%",
+                    color: "rgba(0, 0, 0, 0.2)",
                 }}
             />
         </Box>

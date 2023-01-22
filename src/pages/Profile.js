@@ -1,7 +1,7 @@
-import React from 'react';
-import Sidebar from '../components/Sidebar/Sidebar';
-import Main from '../components/ProfilePageComponents/Main';
-import { Stack, Divider, Box } from '@mui/material';
+import React from "react";
+import Sidebar from "../components/Sidebar/Sidebar";
+import Main from "../components/ProfilePageComponents/Main";
+import { Stack, Divider, Box } from "@mui/material";
 const Profile = () => {
     return (
         <Stack direction="row" spacing="0px">
@@ -9,15 +9,15 @@ const Profile = () => {
                 flex="auto"
                 justifySelf="start"
                 sx={{
-                    backgroundColor: 'white',
-                    display: { xs: 'none', md: 'block' },
+                    backgroundColor: "white",
+                    display: { xs: "none", md: "block" },
                 }}
             ></Box>
             <Sidebar />
             <Divider
                 orientation="vertical"
                 flexItem
-                sx={{ display: { xs: 'none', md: 'flex' } }}
+                sx={{ display: { xs: "none", md: "flex" } }}
             />
             <Main />
         </Stack>

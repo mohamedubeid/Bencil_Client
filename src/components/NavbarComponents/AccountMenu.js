@@ -1,8 +1,8 @@
-import React from 'react';
-import Menu from '@mui/material/Menu';
-import Divider from '@mui/material/Divider';
-import { MenuItemStyled } from '../../styledComponents/NavbarStyledComp.js.js';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Menu from "@mui/material/Menu";
+import Divider from "@mui/material/Divider";
+import { MenuItemStyled } from "../../styledComponents/NavbarStyledComp.js.js";
+import { Link } from "react-router-dom";
 
 const AccountMenu = ({ anchorEl, handleClose }) => {
     const open = Boolean(anchorEl);
@@ -18,11 +18,11 @@ const AccountMenu = ({ anchorEl, handleClose }) => {
                 elevation: 0,
                 sx: {
                     ml: 1,
-                    borderRadius: '7.20942px',
-                    width: '127px',
-                    boxShadow: '0px 3.20419px 5.20419px rgba(0, 0, 0, 0.25)',
+                    borderRadius: "7.20942px",
+                    width: "127px",
+                    boxShadow: "0px 3.20419px 5.20419px rgba(0, 0, 0, 0.25)",
                     mt: 1.5,
-                    '& .MuiAvatar-root': {
+                    "& .MuiAvatar-root": {
                         width: 32,
                         height: 32,
                         ml: -0.5,
@@ -31,33 +31,33 @@ const AccountMenu = ({ anchorEl, handleClose }) => {
                 },
             }}
             transformOrigin={{
-                horizontal: 'right',
-                vertical: 'top',
+                horizontal: "right",
+                vertical: "top",
             }}
             anchorOrigin={{
-                horizontal: 'right',
-                vertical: 'bottom',
+                horizontal: "right",
+                vertical: "bottom",
             }}
         >
-            <MenuItemStyled sx={{ paddingTop: '8px', paddingBottom: '8px' }}>
+            <MenuItemStyled sx={{ paddingTop: "8px", paddingBottom: "8px" }}>
                 <Link
                     to="/profile"
-                    style={{ textDecoration: 'none', color: '#000' }}
+                    style={{ textDecoration: "none", color: "#000" }}
                 >
                     My Profile
                 </Link>
             </MenuItemStyled>
             <MenuItemStyled
-                sx={{ paddingTop: '8.32px', paddingBottom: '8.32px' }}
+                sx={{ paddingTop: "8.32px", paddingBottom: "8.32px" }}
             >
                 Setting
             </MenuItemStyled>
             <MenuItemStyled
-                sx={{ paddingTop: '9.23px', paddingBottom: '9.23px' }}
+                sx={{ paddingTop: "9.23px", paddingBottom: "9.23px" }}
             >
                 <Link
                     to="/feedback"
-                    style={{ textDecoration: 'none', color: '#000' }}
+                    style={{ textDecoration: "none", color: "#000" }}
                 >
                     Feedback
                 </Link>

@@ -24,7 +24,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "sync": "aws s3 sync ./build 's3://bencil.co/'",
+    "sync": "aws s3 sync ./build 's3://bencil-main-app/'",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id E2GO5X1BFZRNZ5 --paths '/*'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

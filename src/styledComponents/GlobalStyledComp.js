@@ -1,34 +1,34 @@
 export const scrollbarStyles = {
-  "&::-webkit-scrollbar": {
-    width: "8px",
-    height: "6px",
-  },
-  "&::-webkit-scrollbar-track": {
-    borderRadius: "10px",
-    background: "rgba(0,0,0,0.1)",
-  },
-  "&::-webkit-scrollbar-thumb": {
-    borderRadius: "10px",
-    background: "rgba(0,0,0,0.2)",
-  },
-  "&::-webkit-scrollbar-thumb:hover": {
-    background: "rgba(0,0,0,0.4)",
-  },
+    "&::-webkit-scrollbar": {
+        width: "8px",
+        height: "6px",
+    },
+    "&::-webkit-scrollbar-track": {
+        borderRadius: "10px",
+        background: "rgba(0,0,0,0.1)",
+    },
+    "&::-webkit-scrollbar-thumb": {
+        borderRadius: "10px",
+        background: "rgba(0,0,0,0.2)",
+    },
+    "&::-webkit-scrollbar-thumb:hover": {
+        background: "rgba(0,0,0,0.4)",
+    },
 };
 export const OuterContainer = {
-  ...scrollbarStyles,
-  overflowY: "auto",
-  height: "90vh",
-  backgroundColor: "white",
+    ...scrollbarStyles,
+    overflowY: "auto",
+    height: "90vh",
+    backgroundColor: "white",
 };
 
 export const InnerContainer = {
-  width: {
-    xs: "95%",
-    sm: "540px",
-    md: "512px",
-    lg: "682px",
-    xl: "810px",
-  },
-  margin: { xs: "auto", md: "0" },
+    width: {
+        xs: "95%",
+        sm: "540px",
+        md: "512px",
+        lg: "682px",
+        xl: "810px",
+    },
+    margin: { xs: "auto", md: "0" },
 };

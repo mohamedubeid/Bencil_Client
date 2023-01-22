@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import Navbar from './components/Navbar';
-import HomePage from './pages/HomePage';
-import Profile from './pages/Profile';
-import Upload from './pages/Upload';
-import Feedback from './pages/Feedback';
-import { Divider } from '@mui/material';
-import authContext from './auth-context';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import Profile from "./pages/Profile";
+import Upload from "./pages/Upload";
+import Feedback from "./pages/Feedback";
+import { Divider } from "@mui/material";
+import authContext from "./auth-context";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
     const [isLoggedIn, setLoggedIn] = useState(false);
     const logIn = () => {
@@ -19,8 +19,8 @@ function App() {
                 <Navbar />
                 <Divider
                     sx={{
-                        width: '100%',
-                        position: { xs: 'static', md: 'fixed' },
+                        width: "100%",
+                        position: { xs: "static", md: "fixed" },
                     }}
                 />
                 <Routes>

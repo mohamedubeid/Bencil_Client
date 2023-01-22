@@ -1,12 +1,12 @@
-import React from 'react';
-import { Box, Grid, Typography } from '@mui/material';
-import { theme } from '../../theme';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import { BottomNavigationStyle } from '../../styledComponents/ProfileStyledComp';
+import React from "react";
+import { Box, Grid, Typography } from "@mui/material";
+import { theme } from "../../theme";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import { BottomNavigationStyle } from "../../styledComponents/ProfileStyledComp";
 const ContentInsightfulBottomNavigation = () => {
     const [value, setValue] = React.useState(0);
-    console.log(value, 'this is value');
+    console.log(value, "this is value");
 
     return (
         <Box>
@@ -17,8 +17,8 @@ const ContentInsightfulBottomNavigation = () => {
                     setValue(newValue);
                 }}
                 sx={{
-                    '.MuiBottomNavigation-root': {
-                        color: 'red',
+                    ".MuiBottomNavigation-root": {
+                        color: "red",
                     },
                 }}
             >
@@ -29,7 +29,7 @@ const ContentInsightfulBottomNavigation = () => {
                         borderBottom:
                             value === 0
                                 ? `2px solid  ${theme.palette.primary.main}`
-                                : '2px solid  rgba(0, 0, 0, 0.2)',
+                                : "2px solid  rgba(0, 0, 0, 0.2)",
                     }}
                 />
                 <BottomNavigationAction
@@ -39,7 +39,7 @@ const ContentInsightfulBottomNavigation = () => {
                         borderBottom:
                             value === 1
                                 ? `2px solid  ${theme.palette.primary.main}`
-                                : '2px solid  rgba(0, 0, 0, 0.2)',
+                                : "2px solid  rgba(0, 0, 0, 0.2)",
                     }}
                 />
             </BottomNavigation>
@@ -49,7 +49,7 @@ const ContentInsightfulBottomNavigation = () => {
                     container
                     alignItems="center"
                     justifyContent="center"
-                    style={{ minHeight: '43vh', textAlign: 'center' }}
+                    style={{ minHeight: "43vh", textAlign: "center" }}
                 >
                     <Grid item xs="auto">
                         <img
@@ -63,9 +63,9 @@ const ContentInsightfulBottomNavigation = () => {
                         <Typography
                             sx={{
                                 fontWeight: 600,
-                                fontSIze: '20px',
-                                lineHeight: '24px',
-                                m: '7px',
+                                fontSIze: "20px",
+                                lineHeight: "24px",
+                                m: "7px",
                             }}
                         >
                             Start sharing your knowledge in Bencil.
@@ -73,9 +73,9 @@ const ContentInsightfulBottomNavigation = () => {
                         <Typography
                             sx={{
                                 fontWeight: 400,
-                                fontSize: '15px',
-                                lineHeight: '18px',
-                                m: '7px',
+                                fontSize: "15px",
+                                lineHeight: "18px",
+                                m: "7px",
                             }}
                         >
                             Bencil community is waiting for you.
@@ -83,7 +83,7 @@ const ContentInsightfulBottomNavigation = () => {
                     </Grid>
                 </Grid>
             ) : (
-                ''
+                ""
             )}
         </Box>
     );

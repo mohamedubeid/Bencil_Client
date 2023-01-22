@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar/Sidebar';
+import React, { useState } from "react";
+import Sidebar from "../components/Sidebar/Sidebar";
 import {
     Stack,
     Divider,
@@ -8,13 +8,13 @@ import {
     TextField,
     IconButton,
     Button,
-} from '@mui/material';
+} from "@mui/material";
 import {
     OuterContainer,
     InnerContainer,
-} from '../styledComponents/GlobalStyledComp';
-import AddIcon from '@mui/icons-material/Add';
-import { theme } from '../theme';
+} from "../styledComponents/GlobalStyledComp";
+import AddIcon from "@mui/icons-material/Add";
+import { theme } from "../theme";
 
 const Feedback = () => {
     const [image, setImage] = useState(null);
@@ -37,24 +37,24 @@ const Feedback = () => {
                 flex="auto"
                 justifySelf="start"
                 sx={{
-                    backgroundColor: 'white',
-                    display: { xs: 'none', md: 'block' },
+                    backgroundColor: "white",
+                    display: { xs: "none", md: "block" },
                 }}
             ></Box>
             <Sidebar />
             <Divider
                 orientation="vertical"
                 flexItem
-                sx={{ display: { xs: 'none', md: 'flex' } }}
+                sx={{ display: { xs: "none", md: "flex" } }}
             />
             <Box flex="auto" sx={OuterContainer}>
                 <Box sx={InnerContainer}>
-                    <Box sx={{ mt: '55px', ml: '97px' }}>
+                    <Box sx={{ mt: "55px", ml: "97px" }}>
                         <Typography
                             sx={{
                                 fontWeight: 600,
-                                fontSize: '25px',
-                                lineHeight: '30px',
+                                fontSize: "25px",
+                                lineHeight: "30px",
                             }}
                         >
                             Feedback and Help
@@ -62,25 +62,25 @@ const Feedback = () => {
                         <Typography
                             sx={{
                                 fontWeight: 400,
-                                fontSize: '15px',
-                                lineHeight: '18px',
-                                mt: '16px',
+                                fontSize: "15px",
+                                lineHeight: "18px",
+                                mt: "16px",
                             }}
                         >
                             Tell us anything you have in mind about Bencil
                         </Typography>
                         <Box
                             sx={{
-                                mt: '62px',
-                                padding: '48px',
-                                border: '1px solid #00000033',
+                                mt: "62px",
+                                padding: "48px",
+                                border: "1px solid #00000033",
                             }}
                         >
                             <Typography
                                 sx={{
                                     fontWeight: 600,
-                                    fontSize: '20px',
-                                    lineHeight: '24px',
+                                    fontSize: "20px",
+                                    lineHeight: "24px",
                                 }}
                             >
                                 Your Feedback
@@ -90,14 +90,14 @@ const Feedback = () => {
                                 multiline
                                 rows={6}
                                 fullWidth
-                                sx={{ mt: '26px' }}
+                                sx={{ mt: "26px" }}
                             />
-                            <Box sx={{ mt: '28px', mb: '33px' }}>
+                            <Box sx={{ mt: "28px", mb: "33px" }}>
                                 <Typography
                                     sx={{
                                         fontWeight: 600,
-                                        fontSize: '20px',
-                                        lineHeight: '24px',
+                                        fontSize: "20px",
+                                        lineHeight: "24px",
                                     }}
                                 >
                                     Upload a photo
@@ -117,8 +117,8 @@ const Feedback = () => {
                                     />
                                     <AddIcon
                                         sx={{
-                                            height: '60px',
-                                            width: '60px',
+                                            height: "60px",
+                                            width: "60px",
                                             color: theme.palette.primary.main,
                                         }}
                                     />
