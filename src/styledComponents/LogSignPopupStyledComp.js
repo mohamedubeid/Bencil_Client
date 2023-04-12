@@ -1,5 +1,3 @@
-import { styled, Box } from "@mui/material";
-
 export const primaryButton = {
     marginTop: "5px",
     marginBottom: "5px",
@@ -20,36 +18,6 @@ export const secondaryButton = {
     },
 };
 
-export const InputFieldStyle = styled(Box)(() => ({
-    border: "1px solid #ebebeb",
-    marginTop: "15px",
-    borderRadius: "5px",
-    p: 0,
-    "&: hover": {
-        border: "1px solid black",
-        input: {
-            "&::placeholder": {
-                fontSize: "16px",
-                fontWeight: "400",
-                opacity: "65%",
-            },
-        },
-    },
-    input: {
-        "&::placeholder": {
-            fontSize: "16px",
-            fontWeight: "400",
-            opacity: "50%",
-        },
-    },
-}));
-
-export const StyledInputBase = {
-    margin: "10px 1rem",
-    fontSize: "13px",
-    overflow: "visible",
-};
-
 export const MenuProps = {
     PaperProps: {
         style: {
@@ -65,4 +33,8 @@ export const itemStyle = {
     fontSize: "2px",
     padding: "0px",
     margin: 0,
+};
+
+export const FormHelperTextFieldStyle = {
+    fontSize: "10px",
 };

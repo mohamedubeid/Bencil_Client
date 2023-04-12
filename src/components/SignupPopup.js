@@ -13,20 +13,21 @@ import {
     secondaryButton,
     MenuProps,
     itemStyle,
+    FormHelperTextFieldStyle,
 } from "../styledComponents/LogSignPopupStyledComp";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
-import { scrollbarStyles } from "../styledComponents/GlobalStyledComp";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import IconButton from "@mui/material/IconButton";
 import Chip from "@mui/material/Chip";
+import FormHelperText from "@mui/material/FormHelperText";
 import ListItemText from "@mui/material/ListItemText";
-
+import { signupBodyValidationSchema } from "../validation/user";
 const names = [
     "Businessperson",
     "Developer/Programmer",
@@ -39,27 +40,56 @@ const names = [
 ];
 
 const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
-    const [showPassword, setShowPassword] = React.useState(false);
-    const [showConfirmPassword, setShowConfirmPassword] = React.useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleClickShowConfirmPassword = () =>
         setShowConfirmPassword((show) => !show);
 
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
+    const [signupForm, setSignupForm] = useState({
+        firstName: "",
+        lastName: "",
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        profession: [],
+        birthDate: "",
+        getEmails: false,
+    });
+    const handleChange = (event) => {
+        if (event.target.name === "getEmails") {
+            setSignupForm({
+                ...signupForm,
+                [event.target.name]: event.target.checked,
+            });
+        } else {
+            setSignupForm({
+                ...signupForm,
+                [event.target.name]: event.target.value,
+            });
+        }
     };
-
-    const [personName, setPersonName] = useState([]);
-
-    const handleSelect = (event) => {
-        const {
-            target: { value },
-        } = event;
-        setPersonName(
-            // On autofill we get a stringified value.
-            typeof value === "string" ? value.split(",") : value
-        );
+    const [errors, setErrors] = useState({});
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { error } = signupBodyValidationSchema.validate(signupForm, {
+            abortEarly: false,
+        });
+        if (error) {
+            setErrors(
+                error.details.reduce((acc, curr) => {
+                    acc[curr.path[0]] = curr.message;
+                    return acc;
+                }, {})
+            );
+            console.log(errors, "aaaaa");
+        } else {
+            // proceed with creating account
+            console.log("valid form");
+        }
+        console.log("this is submit button", signupForm);
     };
 
     return (
@@ -68,12 +98,10 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
             onClose={handleClose}
             sx={{
                 "& .MuiDialog-paper": {
-                    width: "500px",
+                    width: "480px",
                     borderRadius: "5px",
-                    p: "15px 51px 16px 51px",
-                    overflow: "auto",
+                    p: "15px 51px 10px 51px",
                     display: "block",
-                    ...scrollbarStyles,
                 },
             }}
         >
@@ -88,12 +116,12 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
                 Sign up to Bencil
             </DialogTitle>
             <Box
+                onSubmit={handleSubmit}
                 component="form"
                 sx={{
-                    "& .MuiFormControl-root": {
-                        height: "45px",
+                    "& .MuiInputBase-root": {
+                        height: "50px",
                         marginTop: "8px",
-                        overflow: "visible",
                         input: {
                             "&::placeholder": {
                                 fontSize: "15px",
@@ -113,6 +141,14 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
                         placeholder="First Name"
                         type="text"
                         variant="outlined"
+                        name="firstName"
+                        onChange={handleChange}
+                        value={signupForm.firstName}
+                        error={!!errors.firstName}
+                        helperText={errors.firstName}
+                        FormHelperTextProps={{
+                            style: FormHelperTextFieldStyle,
+                        }}
                         sx={{ width: "49%" }}
                     />
                     <TextField
@@ -120,6 +156,14 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
                         placeholder="Last Name"
                         type="text"
                         variant="outlined"
+                        name="lastName"
+                        onChange={handleChange}
+                        value={signupForm.lastName}
+                        error={!!errors.lastName}
+                        helperText={errors.lastName}
+                        FormHelperTextProps={{
+                            style: FormHelperTextFieldStyle,
+                        }}
                         sx={{ width: "49%" }}
                     />
                 </Box>
@@ -128,14 +172,28 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
                     type="email"
                     fullWidth={true}
                     variant="outlined"
+                    name="email"
+                    onChange={handleChange}
+                    value={signupForm.email}
+                    error={!!errors.email}
+                    helperText={errors.email}
+                    FormHelperTextProps={{
+                        style: FormHelperTextFieldStyle,
+                    }}
                 />
-                <FormControl variant="outlined" fullWidth>
+                <FormControl
+                    variant="outlined"
+                    fullWidth
+                    error={!!errors.password}
+                >
                     <OutlinedInput
+                        name="password"
+                        onChange={handleChange}
+                        value={signupForm.password}
                         type={showPassword ? "text" : "password"}
                         endAdornment={
                             <IconButton
                                 onClick={handleClickShowPassword}
-                                onMouseDown={handleMouseDownPassword}
                                 edge="end"
                                 sx={{ opacity: "80%" }}
                             >
@@ -148,14 +206,25 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
                         }
                         placeholder="Password"
                     />
+                    {errors.password && (
+                        <FormHelperText sx={FormHelperTextFieldStyle}>
+                            {errors.password}
+                        </FormHelperText>
+                    )}
                 </FormControl>
-                <FormControl variant="outlined" fullWidth>
+                <FormControl
+                    variant="outlined"
+                    fullWidth
+                    error={!!errors.confirmPassword}
+                >
                     <OutlinedInput
+                        name="confirmPassword"
+                        onChange={handleChange}
+                        value={signupForm.confirmPassword}
                         type={showConfirmPassword ? "text" : "password"}
                         endAdornment={
                             <IconButton
                                 onClick={handleClickShowConfirmPassword}
-                                onMouseDown={handleMouseDownPassword}
                                 edge="end"
                                 sx={{ opacity: "80%" }}
                             >
@@ -168,8 +237,21 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
                         }
                         placeholder="Confirm Password"
                     />
+                    {errors.confirmPassword && (
+                        <FormHelperText sx={FormHelperTextFieldStyle}>
+                            {errors.confirmPassword}
+                        </FormHelperText>
+                    )}
                 </FormControl>
                 <TextField
+                    name="username"
+                    onChange={handleChange}
+                    value={signupForm.username}
+                    error={!!errors.username}
+                    helperText={errors.username}
+                    FormHelperTextProps={{
+                        style: FormHelperTextFieldStyle,
+                    }}
                     placeholder="username"
                     type="text"
                     fullWidth={true}
@@ -186,13 +268,13 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
                     }}
                 />
 
-                <FormControl fullWidth>
-                    {personName.length === 0 && (
+                <FormControl fullWidth error={!!errors.profession}>
+                    {signupForm.profession.length === 0 && (
                         <InputLabel
                             shrink={false}
                             sx={{
                                 opacity: "65%",
-                                lineHeight: "15px",
+                                lineHeight: "30px",
                                 "&.Mui-focused": {
                                     color: "black",
                                     opacity: "41%",
@@ -204,8 +286,9 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
                     )}
                     <Select
                         multiple
-                        value={personName}
-                        onChange={handleSelect}
+                        name="profession"
+                        value={signupForm.profession}
+                        onChange={handleChange}
                         input={<OutlinedInput />}
                         renderValue={(selected) => (
                             <Box
@@ -229,16 +312,30 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
                         {names.map((name) => (
                             <MenuItem key={name} value={name} sx={itemStyle}>
                                 <Checkbox
-                                    checked={personName.indexOf(name) > -1}
+                                    checked={
+                                        signupForm.profession.indexOf(name) > -1
+                                    }
                                     size="small"
                                 />
                                 <ListItemText primary={name} />
                             </MenuItem>
                         ))}
                     </Select>
+                    {errors.profession && (
+                        <FormHelperText sx={FormHelperTextFieldStyle}>
+                            {errors.profession}
+                        </FormHelperText>
+                    )}
                 </FormControl>
-
                 <TextField
+                    name="birthDate"
+                    value={signupForm.birthDate}
+                    onChange={handleChange}
+                    error={!!errors.birthDate}
+                    helperText={errors.birthDate}
+                    FormHelperTextProps={{
+                        style: FormHelperTextFieldStyle,
+                    }}
                     variant="outlined"
                     fullWidth
                     label="Birth Date"
@@ -246,14 +343,16 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
                     InputLabelProps={{
                         shrink: true,
                     }}
+                    sx={{ mt: "8px", height: "53px" }}
                 />
 
                 <FormControlLabel
-                    sx={{ mt: "5px", color: "black", fontSize: "16px" }}
+                    sx={{ mt: "10px", color: "black", fontSize: "16px" }}
                     control={
                         <Checkbox
-                            // checked={checked}
-                            // onChange={handleChange}
+                            name="getEmails"
+                            checked={signupForm.getEmails}
+                            onChange={handleChange}
                             color="primary"
                         />
                     }
@@ -288,9 +387,8 @@ const SignupPopup = ({ open, handleClose, handleClickOpenLoginPopup }) => {
             >
                 Continue with Google
             </Button>
-            <Box sx={{ textAlign: "center" }}>
+            <Box sx={{ textAlign: "center", mt: "20px" }}>
                 <Typography
-                    mt="25px"
                     fontSize="14px"
                     fontWeight="400"
                     display="inline-block"
